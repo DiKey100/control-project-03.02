@@ -2,7 +2,7 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Container from '@mui/material/Container'
 import Menu from 'components/Menu/Menu'
-import Logo from 'container/Logo/Logo'
+import Logo from 'components/Logo/Logo'
 import './Header.scss'
 
 type Props = {}
