@@ -14,6 +14,11 @@
 
 .add-to-cart {
     margin-right: 10px;
+    &:hover {
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+    }
 }
 .look-to-product {
     margin-left: 10px;
@@ -22,6 +27,16 @@
     }
     &:hover {
         border: 0px;
+        margin-left: 11px;
+        margin-bottom: 6px;
+        border-bottom: 1px solid black;
+        &::after {
+            display: block;
+            content: "...";
+            margin-left: 2px;
+            margin-bottom: -1px;
+            
+        }
     }
 }
 .add-to-cart, .look-to-product {
