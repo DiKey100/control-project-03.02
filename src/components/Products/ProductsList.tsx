@@ -1,5 +1,11 @@
 import { Grid } from '@mui/material'
+import productsArray from 'utils/productsArray'
 import ProductListItem from './ProductListItem'
+
+type ProductProps = {
+    title: string
+    price: number
+}
 
 type Props = {}
 
@@ -13,66 +19,11 @@ const ProductsList = (props: Props) => {
                 justifyContent="flex-start"
                 alignItems="center"
             >
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProductListItem />
-                </Grid>
+                {productsArray.map(({ title, price }: ProductProps) => (
+                    <Grid item xs={6}>
+                        <ProductListItem title={title} price={price} />
+                    </Grid>
+                ))}
             </Grid>
         </>
     )
