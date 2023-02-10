@@ -1,0 +1,37 @@
+.product-list {
+    box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.5) ;
+    .product {
+        .title {
+            font-weight: 700;
+            font-size: 23px;
+            margin: 20px;
+        }
+        .price {
+            margin: 10px;
+        }
+    }
+}
+
+.add-to-cart {
+    margin-right: 10px;
+}
+.look-to-product {
+    margin-left: 10px;
+    &::after {
+        display: none;
+    }
+    &:hover {
+        border: 0px;
+    }
+}
+.add-to-cart, .look-to-product {
+    margin-bottom: 5px;
+    padding: 5px 10px 3px;
+    color: black;
+    border: 1px black solid;
+    border-radius: 10px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

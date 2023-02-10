@@ -12,9 +12,10 @@ const Home = (props: Props) => {
                 align="center"
                 sx={{
                     paddingBottom: '40px',
+                    fontWeight: '700',
                 }}
             >
-                Список товаров:
+                Список товаров
             </Typography>
             <ProductsList />
         </>

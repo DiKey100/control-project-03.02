@@ -1,4 +1,5 @@
 import { Button, Card, CardActions, CardContent, Grid } from '@mui/material'
+import './ProductListItem.scss'
 
 type Props = {}
 
@@ -6,8 +7,10 @@ const ProductListItem = (props: Props) => {
     return (
         <Card className="product-list">
             <CardContent>
-                <div className="product-title">Кроссовки</div>
-                <div className="product-price">600 гривен</div>
+                <div className="product">
+                    <div className="title">Кроссовки</div>
+                    <div className="price">Цена: 600 гривен</div>
+                </div>
             </CardContent>
             <CardActions>
                 <Grid
@@ -17,12 +20,12 @@ const ProductListItem = (props: Props) => {
                     alignItems="flex-end"
                 >
                     <Grid item>
-                        <Button className="add-to-cart">
+                        <Button variant="outlined" className="add-to-cart">
                             Добавить в корзину
                         </Button>
                     </Grid>
                     <Grid item>
-                        <Button className="look-to-product">
+                        <Button variant="outlined" className="look-to-product">
                             Просмотреть товар
                         </Button>
                     </Grid>

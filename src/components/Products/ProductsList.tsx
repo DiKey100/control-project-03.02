@@ -8,7 +8,7 @@ const ProductsList = (props: Props) => {
         <>
             <Grid
                 container
-                spacing={4}
+                spacing={5}
                 direction="row"
                 justifyContent="flex-start"
                 alignItems="center"
