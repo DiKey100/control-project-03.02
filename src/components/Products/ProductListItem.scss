@@ -2,13 +2,26 @@
     box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.5) ;
     border-radius: 20px;
     .product {
-        .title {
-            font-weight: 700;
-            font-size: 23px;
-            margin: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .product-info {
+            padding: 10px;
+            .title {
+                font-weight: 700;
+                font-size: 23px;
+                height: 100px;
+                width: 229px;
+                text-align: center;
+            }
         }
-        .price {
-            margin: 10px;
+        .product-img {
+            text-align: right;
+            img {
+                width: 275px;
+                height: auto;
+                border-radius: 20px;
+            }
         }
     }
 }
