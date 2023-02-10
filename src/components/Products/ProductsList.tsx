@@ -22,6 +22,57 @@ const ProductsList = (props: Props) => {
                 <Grid item xs={6}>
                     <ProductListItem />
                 </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
+                <Grid item xs={6}>
+                    <ProductListItem />
+                </Grid>
             </Grid>
         </>
     )
