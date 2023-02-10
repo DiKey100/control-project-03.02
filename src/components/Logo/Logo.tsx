@@ -7,7 +7,11 @@ type Props = {}
 const Logo = (props: Props) => {
     return (
         <Typography component="div" sx={{ flexGrow: 1 }}>
-            <img src={logo} alt="Shop logo" className="logo-shop" />
+            <img
+                src={logo}
+                alt="Логотип магазина: Bear Size"
+                className="logo-shop"
+            />
         </Typography>
     )
 }

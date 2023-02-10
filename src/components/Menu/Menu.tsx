@@ -5,10 +5,10 @@ type Props = {}
 const Menu = (props: Props) => {
     return (
         <>
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">Contact</Button>
-            <Button color="inherit">Liked</Button>
-            <Button color="inherit">Cart</Button>
+            <Button color="inherit">Главная</Button>
+            <Button color="inherit">Связь с нами</Button>
+            <Button color="inherit">Избранное</Button>
+            <Button color="inherit">Корзина</Button>
         </>
     )
 }
