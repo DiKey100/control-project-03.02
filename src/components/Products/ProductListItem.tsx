@@ -1,18 +1,31 @@
 import { Button, Card, CardActions, CardContent, Grid } from '@mui/material'
 import './ProductListItem.scss'
 
-type Props = {}
+type Props = {
+    title: string
+    price: number
+    image: string
+}
 
-const ProductListItem = (props: Props) => {
+const ProductListItem = ({ title, price, image }: Props) => {
     return (
         <Card className="product-list">
             <CardContent>
                 <div className="product">
-                    <div className="title">Кроссовки</div>
-                    <div className="price">Цена: 600 гривен</div>
+                    <div className="product-info">
+                        <div className="title">{title}</div>
+                        <div className="price">Цена: {price} гривен</div>
+                    </div>
+                    <div className="product-img">
+                        <img src={image} alt={title}></img>
+                    </div>
                 </div>
             </CardContent>
-            <CardActions>
+            <CardActions
+                sx={{
+                    padding: '10px',
+                }}
+            >
                 <Grid
                     container
                     direction="row-reverse"

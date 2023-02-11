@@ -11,7 +11,7 @@ const Home = (props: Props) => {
                 component="h1"
                 align="center"
                 sx={{
-                    paddingBottom: '40px',
+                    marginBottom: '40px',
                     fontWeight: '700',
                 }}
             >
