@@ -22,9 +22,7 @@ const ProductFirst = (props: Props) => {
                                 <span>Цена:</span> <span>{price} </span>
                                 гривен
                             </div>
-                            <div className="color">
-                                <span>Цвет:</span> Чёрный, белый
-                            </div>
+                            <div className="color">: Чёрный, белый</div>
                         </div>
                         <div className="product-info-middle">
                             <div className="product-quantity">
@@ -32,9 +30,16 @@ const ProductFirst = (props: Props) => {
                                     variant="outlined"
                                     className="bttn-minus"
                                 >
-                                    -
+                                    —
                                 </Button>
-                                <TextField value="1" size="small" />
+                                <TextField
+                                    value="1"
+                                    size="medium"
+                                    className="quantity-number"
+                                    sx={{
+                                        height: '60px',
+                                    }}
+                                />
                                 <Button
                                     variant="outlined"
                                     className="bttn-plus"
