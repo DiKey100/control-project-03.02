@@ -1,4 +1,5 @@
 import { Button, TextField } from '@mui/material'
+import { useState } from 'react'
 import productsArray from 'utils/productsArray'
 import './ProductFirst.scss'
 
@@ -11,6 +12,8 @@ type ProductProps = {
 type Props = {}
 
 const ProductFirst = (props: Props) => {
+    const [count, setCount] = useState<number>(1)
+
     return (
         <>
             {productsArray.map(({ title, price, image }: ProductProps) => (
@@ -26,26 +29,26 @@ const ProductFirst = (props: Props) => {
                         </div>
                         <div className="product-info-middle">
                             <div className="product-quantity">
-                                <Button
-                                    variant="outlined"
+                                <button
                                     className="bttn-minus"
+                                    onClick={() => setCount(count - 1)}
                                 >
                                     —
-                                </Button>
+                                </button>
                                 <TextField
-                                    value="1"
+                                    value={count}
                                     size="medium"
                                     className="quantity-number"
                                     sx={{
                                         height: '60px',
                                     }}
                                 />
-                                <Button
-                                    variant="outlined"
+                                <button
                                     className="bttn-plus"
+                                    onClick={() => setCount(count + 1)}
                                 >
                                     +
-                                </Button>
+                                </button>
                             </div>
                             <div className="product-button">
                                 <Button
