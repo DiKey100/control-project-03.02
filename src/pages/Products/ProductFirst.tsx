@@ -13,6 +13,12 @@ type Props = {}
 
 const ProductFirst = (props: Props) => {
     const [count, setCount] = useState<number>(1)
+    const onDecrement = () => {
+        setCount((prevState: number) => prevState - 1)
+    }
+    const onIncrement = () => {
+        setCount((prevState: number) => prevState + 1)
+    }
 
     return (
         <>
@@ -29,12 +35,13 @@ const ProductFirst = (props: Props) => {
                         </div>
                         <div className="product-info-middle">
                             <div className="product-quantity">
-                                <button
+                                <Button
                                     className="bttn-minus"
-                                    onClick={() => setCount(count - 1)}
+                                    onClick={onDecrement}
+                                    disabled={count <= 1}
                                 >
                                     —
-                                </button>
+                                </Button>
                                 <TextField
                                     value={count}
                                     size="medium"
@@ -43,12 +50,12 @@ const ProductFirst = (props: Props) => {
                                         height: '60px',
                                     }}
                                 />
-                                <button
+                                <Button
                                     className="bttn-plus"
-                                    onClick={() => setCount(count + 1)}
+                                    onClick={onIncrement}
                                 >
                                     +
-                                </button>
+                                </Button>
                             </div>
                             <div className="product-button">
                                 <Button
