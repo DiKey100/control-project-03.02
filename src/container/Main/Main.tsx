@@ -2,9 +2,11 @@ import { Container } from '@mui/material'
 // import Home from 'pages/Home/Home'
 import ProductFirst from 'pages/Products/ProductFirst'
 
-type Props = {}
+type Props = {
+    addProductToCart: (count: number, price: number) => void
+}
 
-const Main = (props: Props) => {
+const Main = ({ addProductToCart }: Props) => {
     return (
         <Container
             maxWidth="lg"
@@ -14,7 +16,7 @@ const Main = (props: Props) => {
             component="main"
         >
             {/* <Home /> */}
-            <ProductFirst />
+            <ProductFirst addProductToCart={addProductToCart} />
         </Container>
     )
 }
