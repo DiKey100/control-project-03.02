@@ -1,4 +1,5 @@
 import { Button, TextField } from '@mui/material'
+import { useState } from 'react'
 import productsArray from 'utils/productsArray'
 import './ProductFirst.scss'
 
@@ -11,6 +12,14 @@ type ProductProps = {
 type Props = {}
 
 const ProductFirst = (props: Props) => {
+    const [count, setCount] = useState<number>(1)
+    const onDecrement = () => {
+        setCount((prevState: number) => prevState - 1)
+    }
+    const onIncrement = () => {
+        setCount((prevState: number) => prevState + 1)
+    }
+
     return (
         <>
             {productsArray.map(({ title, price, image }: ProductProps) => (
@@ -27,13 +36,14 @@ const ProductFirst = (props: Props) => {
                         <div className="product-info-middle">
                             <div className="product-quantity">
                                 <Button
-                                    variant="outlined"
                                     className="bttn-minus"
+                                    onClick={onDecrement}
+                                    disabled={count <= 1}
                                 >
                                     —
                                 </Button>
                                 <TextField
-                                    value="1"
+                                    value={count}
                                     size="medium"
                                     className="quantity-number"
                                     sx={{
@@ -41,8 +51,8 @@ const ProductFirst = (props: Props) => {
                                     }}
                                 />
                                 <Button
-                                    variant="outlined"
                                     className="bttn-plus"
+                                    onClick={onIncrement}
                                 >
                                     +
                                 </Button>
