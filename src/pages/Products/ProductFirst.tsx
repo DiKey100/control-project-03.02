@@ -9,9 +9,11 @@ type ProductProps = {
     image: string
 }
 
-type Props = {}
+type Props = {
+    addProductToCart: (count: number, price: number) => void
+}
 
-const ProductFirst = (props: Props) => {
+const ProductFirst = ({ addProductToCart }: Props) => {
     const [count, setCount] = useState<number>(1)
     const onDecrement = () => {
         setCount((prevState: number) => prevState - 1)
@@ -61,6 +63,7 @@ const ProductFirst = (props: Props) => {
                                 <Button
                                     variant="outlined"
                                     className="add-to-cart"
+                                    onClick={addProductToCart}
                                 >
                                     Добавить в корзину
                                 </Button>
