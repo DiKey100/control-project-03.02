@@ -1,6 +1,6 @@
 import { Container } from '@mui/material'
-// import Home from 'pages/Home/Home'
-import ProductFirst from 'pages/Products/ProductFirst'
+import Home from 'pages/Home/Home'
+// import ProductFirst from 'pages/Products/ProductFirst'
 
 type Props = {}
 
@@ -13,8 +13,8 @@ const Main = (props: Props) => {
             }}
             component="main"
         >
-            {/* <Home /> */}
-            <ProductFirst />
+            <Home />
+            {/* <ProductFirst /> */}
         </Container>
     )
 }

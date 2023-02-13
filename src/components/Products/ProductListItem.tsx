@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, Grid } from '@mui/material'
+import { Button, Card, CardContent } from '@mui/material'
 import './ProductListItem.scss'
 
 type Props = {
@@ -15,13 +15,16 @@ const ProductListItem = ({ title, price, image }: Props) => {
                     <div className="product-info">
                         <div className="title">{title}</div>
                         <div className="price">Цена: {price} гривен</div>
+                        <Button variant="outlined" className="look-to-product">
+                            Просмотреть товар
+                        </Button>
                     </div>
                     <div className="product-img">
                         <img src={image} alt={title}></img>
                     </div>
                 </div>
             </CardContent>
-            <CardActions
+            {/* <CardActions
                 sx={{
                     padding: '10px',
                 }}
@@ -38,12 +41,10 @@ const ProductListItem = ({ title, price, image }: Props) => {
                         </Button>
                     </Grid>
                     <Grid item>
-                        <Button variant="outlined" className="look-to-product">
-                            Просмотреть товар
-                        </Button>
+                        
                     </Grid>
                 </Grid>
-            </CardActions>
+            </CardActions> */}
         </Card>
     )
 }
