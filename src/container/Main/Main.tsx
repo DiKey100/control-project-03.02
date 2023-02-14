@@ -1,6 +1,6 @@
 import { Container } from '@mui/material'
+import Products from 'pages/Products/Products'
 // import Home from 'pages/Home/Home'
-import ProductFirst from 'pages/Products/ProductFirst'
 
 type Props = {
     addProductToCart: (count: number, price: number) => void
@@ -16,7 +16,7 @@ const Main = ({ addProductToCart }: Props) => {
             component="main"
         >
             {/* <Home /> */}
-            <ProductFirst addProductToCart={addProductToCart} />
+            <Products addProductToCart={addProductToCart} />
         </Container>
     )
 }

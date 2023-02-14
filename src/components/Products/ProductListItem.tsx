@@ -24,27 +24,6 @@ const ProductListItem = ({ title, price, image }: Props) => {
                     </div>
                 </div>
             </CardContent>
-            {/* <CardActions
-                sx={{
-                    padding: '10px',
-                }}
-            >
-                <Grid
-                    container
-                    direction="row-reverse"
-                    justifyContent="space-between"
-                    alignItems="flex-end"
-                >
-                    <Grid item>
-                        <Button variant="outlined" className="add-to-cart">
-                            Добавить в корзину
-                        </Button>
-                    </Grid>
-                    <Grid item>
-                        
-                    </Grid>
-                </Grid>
-            </CardActions> */}
         </Card>
     )
 }
