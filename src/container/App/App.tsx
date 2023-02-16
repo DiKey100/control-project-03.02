@@ -14,7 +14,12 @@ const App = () => {
             1: 5,
         })
 
-    const addProductToCart = (count: number, price: number) => {}
+    const addProductToCart = (id: number, count: number) => {
+        setWhatProductsInCart((prevState: WhatProductsInCart) => ({
+            ...prevState,
+            [id]: prevState[id] + count,
+        }))
+    }
 
     return (
         <StyledEngineProvider injectFirst>

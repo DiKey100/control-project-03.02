@@ -3,13 +3,15 @@ import { useState } from 'react'
 import './DetailProductItem.scss'
 
 type Props = {
+    id: number
     title: string
     price: number
     image: string
-    addProductToCart: (count: number, price: number) => void
+    addProductToCart: (id: number, count: number) => void
 }
 
 const DetailProductItem = ({
+    id,
     title,
     price,
     image,
@@ -59,7 +61,7 @@ const DetailProductItem = ({
                         <Button
                             variant="outlined"
                             className="add-to-cart"
-                            onClick={() => addProductToCart(count, price)}
+                            onClick={() => addProductToCart(id, count)}
                         >
                             Добавить в корзину
                         </Button>

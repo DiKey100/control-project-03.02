@@ -3,7 +3,7 @@ import Products from 'pages/Products/Products'
 // import Home from 'pages/Home/Home'
 
 type Props = {
-    addProductToCart: (count: number, price: number) => void
+    addProductToCart: (id: number, count: number) => void
 }
 
 const Main = ({ addProductToCart }: Props) => {
