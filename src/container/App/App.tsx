@@ -4,30 +4,22 @@ import Header from 'container/Header/Header'
 import Main from 'container/Main/Main'
 import { useState } from 'react'
 
-type Props = {}
-
-type CartData = {
-    totalCount: number
-    totalPrice: number
+type WhatProductsInCart = {
+    [id: number]: number
 }
 
-const App = (props: Props) => {
-    const [cartData, setCartData] = useState<CartData>({
-        totalCount: 0,
-        totalPrice: 0,
-    })
+const App = () => {
+    const [whatProductsInCart, setWhatProductsInCart] =
+        useState<WhatProductsInCart>({
+            1: 5,
+        })
 
-    const addProductToCart = (count: number, price: number) => {
-        setCartData((prevState: CartData) => ({
-            totalCount: prevState.totalCount + count,
-            totalPrice: prevState.totalPrice + price * count,
-        }))
-    }
+    const addProductToCart = (count: number, price: number) => {}
 
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
-            <Header cartData={cartData} />
+            <Header whatProductsInCart={whatProductsInCart} />
             <Main addProductToCart={addProductToCart} />
         </StyledEngineProvider>
     )
