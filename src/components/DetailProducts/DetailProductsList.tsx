@@ -5,6 +5,7 @@ type ProductProps = {
     id: number
     title: string
     price: number
+    color: string
     image: string
 }
 
@@ -15,15 +16,18 @@ type Props = {
 const DetailProductsList = ({ addProductToCart }: Props) => {
     return (
         <>
-            {productsArray.map(({ id, title, price, image }: ProductProps) => (
-                <DetailProductItem
-                    id={id}
-                    title={title}
-                    price={price}
-                    image={image}
-                    addProductToCart={addProductToCart}
-                />
-            ))}
+            {productsArray.map(
+                ({ id, title, price, color, image }: ProductProps) => (
+                    <DetailProductItem
+                        id={id}
+                        title={title}
+                        price={price}
+                        color={color}
+                        image={image}
+                        addProductToCart={addProductToCart}
+                    />
+                )
+            )}
         </>
     )
 }
