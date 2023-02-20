@@ -18,12 +18,25 @@ const CartHeader = ({
 }: Props) => {
     return (
         <div>
-            {Object.keys(whatProductsInCart).map((productId) => (
-                <div key={productId}>
-                    {productsObject[parseInt(productId)].title} :{' '}
-                    {whatProductsInCart[parseInt(productId)]}
-                </div>
-            ))}
+            <div>
+                {Object.keys(whatProductsInCart).map((productId) => (
+                    <div key={productId}>
+                        {productsObject[parseInt(productId)].title} :{' '}
+                        {whatProductsInCart[parseInt(productId)]}
+                    </div>
+                ))}
+            </div>
+            <div>
+                Общая сумма:{' '}
+                {Object.keys(whatProductsInCart).reduce(
+                    (total, productId) =>
+                        total +
+                        whatProductsInCart[parseInt(productId)] *
+                            productsObject[parseInt(productId)].price,
+                    0
+                )}{' '}
+                гривен
+            </div>
         </div>
     )
 }
