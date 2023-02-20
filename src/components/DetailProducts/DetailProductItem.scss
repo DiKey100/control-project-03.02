@@ -20,7 +20,7 @@
 }
 .price {
     margin-left: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     width: 220px;
     span {
         &:first-child {
@@ -33,13 +33,11 @@
 }
 .color {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
-    margin-bottom: 100px;
+    margin-left: 18px;
+    margin-bottom: 70px;
     text-align: right;
-    span {
-        font-style: italic;
-    }
     &::before {
         display: block;
         content: "";

@@ -6,6 +6,7 @@ type Props = {
     id: number
     title: string
     price: number
+    color: string
     image: string
     addProductToCart: (id: number, count: number) => void
 }
@@ -14,6 +15,7 @@ const DetailProductItem = ({
     id,
     title,
     price,
+    color,
     image,
     addProductToCart,
 }: Props) => {
@@ -34,7 +36,7 @@ const DetailProductItem = ({
                         <span>Цена:</span> <span>{price} </span>
                         гривен
                     </div>
-                    <div className="color">: Чёрный, белый</div>
+                    <div className="color">: {color}</div>
                 </div>
                 <div className="product-info-middle">
                     <div className="product-quantity">
