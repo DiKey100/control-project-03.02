@@ -1,21 +1,24 @@
 .open-sh-cart {
+    display: block;
     box-sizing: border-box;    
-    color: white;
     background-color: black;
-    font-weight: 500;
-    font-size: 0.875rem;
-    line-height: 1.75;
     margin-top: -2px;
     border-radius: 4px;
-    text-transform: uppercase;
     cursor: pointer;
+    height: 30px;
+    width: 30px;
+    background-image: url(../../assets/shcart.png);
+    background-size: 27px, 27px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .sh-cart {
     position: absolute;
     top: 75px;
     right: 30px;
-    box-shadow: 0px 0px 15px white ;
-    background-color: black;
+    box-shadow: 0px 0px 15px black ;
+    background-color: white;
+    color: black;
     height: auto;
     width: 360px;
     padding: 30px;
@@ -24,9 +27,10 @@
 }
 .close-sh-cart {
     position: relative;
-    top: -10px;
+    top: -8px;
     left: 280px;
     color: red;
+    font-weight: 700;
     font-size: 20px;
     line-height: 20px;
     width: 20px;
@@ -37,5 +41,10 @@
     }
 }
 .sh-cart-info {
-    margin-top: -25px;
+    margin-top: -30px;
+    div{
+        &:last-child {
+            margin-top: 10px;
+        }
+    }
 }

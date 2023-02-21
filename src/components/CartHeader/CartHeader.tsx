@@ -24,9 +24,7 @@ const CartHeader = ({
             <button
                 onClick={() => setIsShortCartShow(true)}
                 className="open-sh-cart"
-            >
-                Показать корзину
-            </button>
+            ></button>
             {isShortCartShow && (
                 <div className="sh-cart">
                     <div
