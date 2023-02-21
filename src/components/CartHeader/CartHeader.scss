@@ -1,0 +1,50 @@
+.open-sh-cart {
+    display: block;
+    box-sizing: border-box;    
+    background-color: black;
+    margin-top: -2px;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    background-image: url(../../assets/shcart.png);
+    background-size: 27px, 27px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.sh-cart {
+    position: absolute;
+    top: 75px;
+    right: 30px;
+    box-shadow: 0px 0px 15px black ;
+    background-color: white;
+    color: black;
+    height: auto;
+    width: 360px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.close-sh-cart {
+    position: relative;
+    top: -8px;
+    left: 280px;
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.sh-cart-info {
+    margin-top: -30px;
+    div{
+        &:last-child {
+            margin-top: 10px;
+        }
+    }
+}
