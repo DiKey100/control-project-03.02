@@ -1,5 +1,5 @@
-import ProductsInCart from 'components/ProductsInCart/ProductsInCart'
-import TotalPrice from 'components/TotalPrice/TotalPrice'
+import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
+import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
 import { useState } from 'react'
 import './CartHeader.scss'
 
