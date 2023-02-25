@@ -1,25 +1,15 @@
 import ProductsInCart from 'components/ProductsInCart/ProductsInCart'
 import TotalPrice from 'components/TotalPrice/TotalPrice'
 import { useState } from 'react'
-import productsArray, {
-    getProductsObject,
-    ProductProps,
-} from 'utils/productsArray'
 import './CartHeader.scss'
 
 type Props = {
     whatProductsInCart: {
         [id: number]: number
     }
-    productsObject?: {
-        [id: number]: ProductProps
-    }
 }
 
-const CartHeader = ({
-    whatProductsInCart,
-    productsObject = getProductsObject(productsArray),
-}: Props) => {
+const CartHeader = ({ whatProductsInCart }: Props) => {
     const [isShortCartShow, setIsShortCartShow] = useState<boolean>(false)
     return (
         <div>
