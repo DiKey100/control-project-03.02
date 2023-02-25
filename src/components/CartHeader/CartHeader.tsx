@@ -1,3 +1,5 @@
+import ProductsInCart from 'components/ProductsInCart/ProductsInCart'
+import TotalPrice from 'components/TotalPrice/TotalPrice'
 import { useState } from 'react'
 import productsArray, {
     getProductsObject,
@@ -34,36 +36,10 @@ const CartHeader = ({
                         X
                     </div>
                     <div className="sh-cart-info">
-                        <div>
-                            {Object.keys(whatProductsInCart).map(
-                                (productId) => (
-                                    <div key={productId}>
-                                        {
-                                            productsObject[parseInt(productId)]
-                                                .title
-                                        }{' '}
-                                        :{' '}
-                                        {
-                                            whatProductsInCart[
-                                                parseInt(productId)
-                                            ]
-                                        }
-                                    </div>
-                                )
-                            )}
-                        </div>
-                        <div>
-                            Общая сумма:{' '}
-                            {Object.keys(whatProductsInCart).reduce(
-                                (total, productId) =>
-                                    total +
-                                    whatProductsInCart[parseInt(productId)] *
-                                        productsObject[parseInt(productId)]
-                                            .price,
-                                0
-                            )}{' '}
-                            гривен
-                        </div>
+                        <ProductsInCart
+                            whatProductsInCart={whatProductsInCart}
+                        />
+                        <TotalPrice whatProductsInCart={whatProductsInCart} />
                     </div>
                 </div>
             )}
