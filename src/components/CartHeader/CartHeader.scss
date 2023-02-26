@@ -41,10 +41,8 @@
     }
 }
 .sh-cart-info {
-    margin-top: -30px;
-    div{
-        &:last-child {
-            margin-top: 10px;
-        }
+    margin-top: -20px;
+    .total-price {
+        margin-top: 10px;
     }
 }

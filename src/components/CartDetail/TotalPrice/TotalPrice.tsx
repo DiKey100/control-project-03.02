@@ -17,7 +17,7 @@ const TotalPrice = ({
     productsObject = getProductsObject(productsArray),
 }: Props) => {
     return (
-        <div>
+        <div className="total-price">
             Общая сумма:{' '}
             {Object.keys(whatProductsInCart).reduce(
                 (total, productId) =>
