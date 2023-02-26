@@ -1,23 +1,15 @@
+import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
+import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
 import { useState } from 'react'
-import productsArray, {
-    getProductsObject,
-    ProductProps,
-} from 'utils/productsArray'
 import './CartHeader.scss'
 
 type Props = {
     whatProductsInCart: {
         [id: number]: number
     }
-    productsObject?: {
-        [id: number]: ProductProps
-    }
 }
 
-const CartHeader = ({
-    whatProductsInCart,
-    productsObject = getProductsObject(productsArray),
-}: Props) => {
+const CartHeader = ({ whatProductsInCart }: Props) => {
     const [isShortCartShow, setIsShortCartShow] = useState<boolean>(false)
     return (
         <div>
@@ -34,36 +26,10 @@ const CartHeader = ({
                         X
                     </div>
                     <div className="sh-cart-info">
-                        <div>
-                            {Object.keys(whatProductsInCart).map(
-                                (productId) => (
-                                    <div key={productId}>
-                                        {
-                                            productsObject[parseInt(productId)]
-                                                .title
-                                        }{' '}
-                                        :{' '}
-                                        {
-                                            whatProductsInCart[
-                                                parseInt(productId)
-                                            ]
-                                        }
-                                    </div>
-                                )
-                            )}
-                        </div>
-                        <div>
-                            Общая сумма:{' '}
-                            {Object.keys(whatProductsInCart).reduce(
-                                (total, productId) =>
-                                    total +
-                                    whatProductsInCart[parseInt(productId)] *
-                                        productsObject[parseInt(productId)]
-                                            .price,
-                                0
-                            )}{' '}
-                            гривен
-                        </div>
+                        <ProductsInCart
+                            whatProductsInCart={whatProductsInCart}
+                        />
+                        <TotalPrice whatProductsInCart={whatProductsInCart} />
                     </div>
                 </div>
             )}

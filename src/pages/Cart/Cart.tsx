@@ -1,22 +1,14 @@
 import { Typography } from '@mui/material'
-import productsArray, {
-    getProductsObject,
-    ProductProps,
-} from 'utils/productsArray'
+import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
+import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
 
 type Props = {
     whatProductsInCart: {
         [id: number]: number
     }
-    productsObject?: {
-        [id: number]: ProductProps
-    }
 }
 
-const Cart = ({
-    whatProductsInCart,
-    productsObject = getProductsObject(productsArray),
-}: Props) => {
+const Cart = ({ whatProductsInCart }: Props) => {
     return (
         <div>
             <Typography
@@ -28,25 +20,8 @@ const Cart = ({
             >
                 Корзина
             </Typography>
-            <div>
-                {Object.keys(whatProductsInCart).map((productId) => (
-                    <div key={productId}>
-                        {productsObject[parseInt(productId)].title} :{' '}
-                        {whatProductsInCart[parseInt(productId)]}
-                    </div>
-                ))}
-            </div>
-            <div>
-                Общая сумма:{' '}
-                {Object.keys(whatProductsInCart).reduce(
-                    (total, productId) =>
-                        total +
-                        whatProductsInCart[parseInt(productId)] *
-                            productsObject[parseInt(productId)].price,
-                    0
-                )}{' '}
-                гривен
-            </div>
+            <ProductsInCart whatProductsInCart={whatProductsInCart} />
+            <TotalPrice whatProductsInCart={whatProductsInCart} />
         </div>
     )
 }
