@@ -21,7 +21,13 @@ const Cart = ({ whatProductsInCart }: Props) => {
             >
                 Корзина
             </Typography>
-            <Grid container>
+            <Grid
+                container
+                direction="column"
+                justifyContent="flex-start"
+                alignItems="center"
+                spacing={3}
+            >
                 <ProductsInCart
                     whatProductsInCart={whatProductsInCart}
                     CartItem={OneProductCartExtended}
