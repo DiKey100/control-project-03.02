@@ -1,5 +1,4 @@
 import { Card, CardContent, Grid } from '@mui/material'
-import { url } from 'inspector'
 import { ProductProps } from 'utils/productsArray'
 import './OneProductCartExtended.scss'
 
