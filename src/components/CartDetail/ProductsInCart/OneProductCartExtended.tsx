@@ -11,15 +11,17 @@ const OneProductCartExtended = ({ product, productCount }: Props) => {
     return (
         <Grid item xs={12}>
             <Card>
-                <CardContent>
-                    <div>
+                <CardContent className="cart">
+                    <div className="cart-information">
                         <div className="cart-title">{product.title}</div>
                         <div className="cart-price">
-                            Цена товара: {product.price}
+                            Цена товара: <b>{product.price}</b>
                         </div>
-                        <div className="cart-count">{productCount}</div>
+                        <div className="cart-count">
+                            Количество товара в корзине: <b>{productCount}</b>
+                        </div>
                     </div>
-                    <div>
+                    <div className="cart-image">
                         <img src={product.image} alt="" />
                     </div>
                 </CardContent>
