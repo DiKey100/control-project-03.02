@@ -23,19 +23,21 @@
     font-size: 40px;
     font-weight: 700;
 }
-.cart-price {
-    font-size: 23px;
-    text-align: right;
-    b {
+.cart-price, .cart-count {
+    width: 450px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    span {
         color: #AD1100;
+        font-weight: 600;
     }
 }
-.cart-count {
+.cart-price {
     font-size: 23px;
-    text-align: start;
-    b {
-        color: #AD1100;
-    }
+}
+.cart-count {
+    font-size: 23px;    
 }
 
 .cart-image {

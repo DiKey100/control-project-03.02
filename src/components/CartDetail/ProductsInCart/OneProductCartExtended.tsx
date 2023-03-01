@@ -15,10 +15,11 @@ const OneProductCartExtended = ({ product, productCount }: Props) => {
                     <div className="cart-information">
                         <div className="cart-title">{product.title}</div>
                         <div className="cart-price">
-                            Цена товара: <b>{product.price}</b>
+                            Цена товара: <span>{product.price}</span>
                         </div>
                         <div className="cart-count">
-                            Количество товара в корзине: <b>{productCount}</b>
+                            Количество товара в корзине:{' '}
+                            <span>{productCount}</span>
                         </div>
                     </div>
                     <div className="cart-image">
