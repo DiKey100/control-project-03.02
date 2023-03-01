@@ -15,8 +15,10 @@ const Cart = ({ whatProductsInCart }: Props) => {
             <Typography
                 variant="h4"
                 component="h1"
+                align="center"
                 sx={{
                     marginBottom: '30px',
+                    fontWeight: '500',
                 }}
             >
                 Корзина
