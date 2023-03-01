@@ -1,0 +1,5 @@
+@mixin flex($flDir) {
+    display: flex;
+    flex-direction: $flDir;
+    justify-content: space-between;
+}

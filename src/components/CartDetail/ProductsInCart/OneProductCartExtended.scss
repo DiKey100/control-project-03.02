@@ -1,7 +1,7 @@
+@import "../../../css/mixin";
+
 .cart {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex(row);
     align-items: center;
     width: 1200px;
     padding: 0px;
@@ -10,9 +10,7 @@
 }
 
 .cart-information {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(column);
     align-items: center;
     height: 400px;
     width: 500px;
@@ -24,10 +22,8 @@
     font-weight: 700;
 }
 .cart-price, .cart-count {
-    width: 450px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex(row);
+    width: 250px;
     span {
         color: #AD1100;
         font-weight: 600;

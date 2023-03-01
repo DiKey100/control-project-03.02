@@ -18,8 +18,7 @@ const OneProductCartExtended = ({ product, productCount }: Props) => {
                             Цена товара: <span>{product.price}</span>
                         </div>
                         <div className="cart-count">
-                            Количество товара в корзине:{' '}
-                            <span>{productCount}</span>
+                            Количество товара: <span>{productCount}</span>
                         </div>
                     </div>
                     <div className="cart-image">
