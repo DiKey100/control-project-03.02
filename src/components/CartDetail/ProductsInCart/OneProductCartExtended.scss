@@ -11,11 +11,17 @@
 
 .cart-information {
     @include flex(column);
-    align-items: center;
+    align-items: flex-start;
     height: 400px;
-    width: 500px;
-    margin-left: 50px;
+    width: 400px;
+    margin-left: 150px;
     margin-bottom: -24px;
+}
+
+.cart-info-numb {
+    @include flex(column);
+    align-items: flex-start;
+    height: 130px;
 }
 .cart-title {
     font-size: 40px;
@@ -23,17 +29,12 @@
 }
 .cart-price, .cart-count {
     @include flex(row);
-    width: 250px;
+    width: 350px;
+    font-size: 23px; 
     span {
         color: #AD1100;
         font-weight: 600;
     }
-}
-.cart-price {
-    font-size: 23px;
-}
-.cart-count {
-    font-size: 23px;    
 }
 
 .cart-image {
@@ -43,5 +44,16 @@
     height: 525px;
     img {
         width: 450px;
+    }
+}
+
+.delete-product {
+    font-size: 23px;
+    color: red;
+    width: 350px;
+    text-align: right;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
     }
 }

@@ -14,12 +14,15 @@ const OneProductCartExtended = ({ product, productCount }: Props) => {
                 <CardContent className="cart">
                     <div className="cart-information">
                         <div className="cart-title">{product.title}</div>
-                        <div className="cart-price">
-                            Цена товара: <span>{product.price}</span>
+                        <div className="cart-info-numb">
+                            <div className="cart-price">
+                                Цена товара: <span>{product.price}</span>
+                            </div>
+                            <div className="cart-count">
+                                Количество товара: <span>{productCount}</span>
+                            </div>
                         </div>
-                        <div className="cart-count">
-                            Количество товара: <span>{productCount}</span>
-                        </div>
+                        <div className="delete-product">Удалить товар</div>
                     </div>
                     <div className="cart-image">
                         <img src={product.image} alt="" />
