@@ -33,6 +33,7 @@ const App = () => {
             <Main
                 addProductToCart={addProductToCart}
                 whatProductsInCart={whatProductsInCart}
+                deleteProducts={deleteProducts}
             />
         </StyledEngineProvider>
     )
