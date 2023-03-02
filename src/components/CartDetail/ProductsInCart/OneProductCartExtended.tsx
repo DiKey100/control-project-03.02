@@ -5,9 +5,14 @@ import './OneProductCartExtended.scss'
 type Props = {
     productCount: number
     product: ProductProps
+    deleteProducts: (id: number) => void
 }
 
-const OneProductCartExtended = ({ product, productCount }: Props) => {
+const OneProductCartExtended = ({
+    product,
+    productCount,
+    deleteProducts,
+}: Props) => {
     return (
         <Grid item xs={12}>
             <Card>
@@ -22,7 +27,12 @@ const OneProductCartExtended = ({ product, productCount }: Props) => {
                                 Количество товара: <span>{productCount}</span>
                             </div>
                         </div>
-                        <div className="delete-product">Удалить товар</div>
+                        <div
+                            className="delete-product"
+                            onClick={() => deleteProducts(product.id)}
+                        >
+                            Удалить товар
+                        </div>
                     </div>
                     <div className="cart-image">
                         <img src={product.image} alt="" />

@@ -2,14 +2,16 @@ import { Grid, Typography } from '@mui/material'
 import OneProductCartExtended from 'components/CartDetail/ProductsInCart/OneProductCartExtended'
 import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
 import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
+import './Cart.scss'
 
 type Props = {
     whatProductsInCart: {
         [id: number]: number
     }
+    deleteProducts: (id: number) => void
 }
 
-const Cart = ({ whatProductsInCart }: Props) => {
+const Cart = ({ whatProductsInCart, deleteProducts }: Props) => {
     return (
         <div>
             <Typography
@@ -33,6 +35,7 @@ const Cart = ({ whatProductsInCart }: Props) => {
                 <ProductsInCart
                     whatProductsInCart={whatProductsInCart}
                     CartItem={OneProductCartExtended}
+                    deleteProducts={deleteProducts}
                 />
             </Grid>
             <TotalPrice whatProductsInCart={whatProductsInCart} />
