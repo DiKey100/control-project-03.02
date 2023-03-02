@@ -2,6 +2,7 @@ import { Grid, Typography } from '@mui/material'
 import OneProductCartExtended from 'components/CartDetail/ProductsInCart/OneProductCartExtended'
 import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
 import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
+import './Cart.scss'
 
 type Props = {
     whatProductsInCart: {
