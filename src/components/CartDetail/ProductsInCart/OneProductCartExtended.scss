@@ -39,6 +39,20 @@
     }
 }
 
+.cart-info-func {
+    @include flex(row);
+    align-items: center;
+    width: 350px;
+}
+.change-count, .delete-product {
+    font-size: 20px;
+    color: yellow;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
 .cart-image {
     position: relative;
     top: 0px;
@@ -46,16 +60,5 @@
     height: 525px;
     img {
         width: 450px;
-    }
-}
-
-.delete-product {
-    font-size: 23px;
-    color: yellow;
-    width: 350px;
-    text-align: right;
-    &:hover {
-        cursor: pointer;
-        text-decoration: underline;
     }
 }

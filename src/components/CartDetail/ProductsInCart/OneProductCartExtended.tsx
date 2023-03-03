@@ -31,11 +31,14 @@ const OneProductCartExtended = ({
                                 Количество товара: <span>{productCount}</span>
                             </div>
                         </div>
-                        <div
-                            className="delete-product"
-                            onClick={() => deleteProducts(product.id)}
-                        >
-                            Удалить товар
+                        <div className="cart-info-func">
+                            <div className="change-count">Изменить кол-во</div>
+                            <div
+                                className="delete-product"
+                                onClick={() => deleteProducts(product.id)}
+                            >
+                                Удалить товар
+                            </div>
                         </div>
                     </div>
                     <div className="cart-image">
