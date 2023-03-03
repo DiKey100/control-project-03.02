@@ -5,8 +5,10 @@
     align-items: center;
     width: 1200px;
     padding: 0px;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(232,232,232,1) 60%, rgba(88,88,88,1) 100%);
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(170,170,170,1) 65%, rgba(255,255,255,1) 100%);
+    color: white;
+    border-radius: 20px;
 }
 
 .cart-information {
@@ -14,7 +16,7 @@
     align-items: flex-start;
     height: 400px;
     width: 400px;
-    margin-left: 150px;
+    margin-left: 120px;
     margin-bottom: -24px;
 }
 
@@ -32,7 +34,7 @@
     width: 350px;
     font-size: 23px; 
     span {
-        color: #AD1100;
+        color: #FFCA14;
         font-weight: 600;
     }
 }
@@ -49,7 +51,7 @@
 
 .delete-product {
     font-size: 23px;
-    color: red;
+    color: yellow;
     width: 350px;
     text-align: right;
     &:hover {

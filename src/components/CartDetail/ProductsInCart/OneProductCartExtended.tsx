@@ -15,7 +15,11 @@ const OneProductCartExtended = ({
 }: Props) => {
     return (
         <Grid item xs={12}>
-            <Card>
+            <Card
+                sx={{
+                    borderRadius: '20px',
+                }}
+            >
                 <CardContent className="cart">
                     <div className="cart-information">
                         <div className="cart-title">{product.title}</div>
