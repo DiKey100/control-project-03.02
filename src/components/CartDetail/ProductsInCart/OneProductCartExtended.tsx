@@ -15,7 +15,11 @@ const OneProductCartExtended = ({
 }: Props) => {
     return (
         <Grid item xs={12}>
-            <Card>
+            <Card
+                sx={{
+                    borderRadius: '20px',
+                }}
+            >
                 <CardContent className="cart">
                     <div className="cart-information">
                         <div className="cart-title">{product.title}</div>
@@ -27,11 +31,14 @@ const OneProductCartExtended = ({
                                 Количество товара: <span>{productCount}</span>
                             </div>
                         </div>
-                        <div
-                            className="delete-product"
-                            onClick={() => deleteProducts(product.id)}
-                        >
-                            Удалить товар
+                        <div className="cart-info-func">
+                            <div className="change-count">Изменить кол-во</div>
+                            <div
+                                className="delete-product"
+                                onClick={() => deleteProducts(product.id)}
+                            >
+                                Удалить товар
+                            </div>
                         </div>
                     </div>
                     <div className="cart-image">
