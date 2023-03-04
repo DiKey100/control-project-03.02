@@ -23,6 +23,9 @@ const Quantity = ({ count, onDecrement, onIncrement }: Props) => {
                 sx={{
                     height: '60px',
                 }}
+                InputProps={{
+                    readOnly: true,
+                }}
             />
             <Button className="bttn-plus" onClick={() => onIncrement()}>
                 +

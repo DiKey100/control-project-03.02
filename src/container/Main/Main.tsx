@@ -12,12 +12,14 @@ type Props = {
         [id: number]: number
     }
     deleteProducts: (id: number) => void
+    changeCountProduct: (id: number, count: number) => void
 }
 
 const Main = ({
     addProductToCart,
     whatProductsInCart,
     deleteProducts,
+    changeCountProduct,
 }: Props) => {
     return (
         <Container
@@ -40,6 +42,7 @@ const Main = ({
                         <Cart
                             whatProductsInCart={whatProductsInCart}
                             deleteProducts={deleteProducts}
+                            changeCountProduct={changeCountProduct}
                         />
                     }
                 />

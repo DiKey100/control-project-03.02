@@ -26,6 +26,13 @@ const App = () => {
             omit(prevState, [id])
         )
 
+    const changeCountProduct = (id: number, count: number) => {
+        setWhatProductsInCart((prevState: WhatProductsInCart) => ({
+            ...prevState,
+            [id]: count,
+        }))
+    }
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
@@ -34,6 +41,7 @@ const App = () => {
                 addProductToCart={addProductToCart}
                 whatProductsInCart={whatProductsInCart}
                 deleteProducts={deleteProducts}
+                changeCountProduct={changeCountProduct}
             />
         </StyledEngineProvider>
     )
