@@ -1,4 +1,6 @@
-import { Card, CardContent, Grid } from '@mui/material'
+import { Button, Card, CardContent, Grid, TextField } from '@mui/material'
+import Quantity from 'components/Quantity/Quantity'
+import { useState } from 'react'
 import { ProductProps } from 'utils/productsArray'
 import './OneProductCartExtended.scss'
 
@@ -13,6 +15,7 @@ const OneProductCartExtended = ({
     productCount,
     deleteProducts,
 }: Props) => {
+    const [isChangeCountShow, setIsChangeCountShow] = useState<boolean>(false)
     return (
         <Grid item xs={12}>
             <Card
@@ -31,8 +34,29 @@ const OneProductCartExtended = ({
                                 Количество товара: <span>{productCount}</span>
                             </div>
                         </div>
+                        {isChangeCountShow && (
+                            <div className="ch-count">
+                                <div
+                                    className="close-ch-count"
+                                    onClick={() => setIsChangeCountShow(false)}
+                                >
+                                    X
+                                </div>
+                                <Quantity
+                                    count={productCount}
+                                    onDecrement={() => console.log('test')}
+                                    onIncrement={() => console.log('test')}
+                                />
+                            </div>
+                        )}
                         <div className="cart-info-func">
-                            <div className="change-count">Изменить кол-во</div>
+                            <div
+                                onClick={() => setIsChangeCountShow(true)}
+                                className="open-change-count"
+                            >
+                                Изменить кол-во
+                            </div>
+
                             <div
                                 className="delete-product"
                                 onClick={() => deleteProducts(product.id)}

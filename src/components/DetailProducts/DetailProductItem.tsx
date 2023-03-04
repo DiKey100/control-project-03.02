@@ -1,4 +1,5 @@
 import { Button, TextField } from '@mui/material'
+import Quantity from 'components/Quantity/Quantity'
 import { useState } from 'react'
 import './DetailProductItem.scss'
 
@@ -39,26 +40,11 @@ const DetailProductItem = ({
                     <div className="color">: {color}</div>
                 </div>
                 <div className="product-info-middle">
-                    <div className="product-quantity">
-                        <Button
-                            className="bttn-minus"
-                            onClick={onDecrement}
-                            disabled={count <= 1}
-                        >
-                            —
-                        </Button>
-                        <TextField
-                            value={count}
-                            size="medium"
-                            className="quantity-number"
-                            sx={{
-                                height: '60px',
-                            }}
-                        />
-                        <Button className="bttn-plus" onClick={onIncrement}>
-                            +
-                        </Button>
-                    </div>
+                    <Quantity
+                        count={count}
+                        onDecrement={onDecrement}
+                        onIncrement={onIncrement}
+                    />
                     <div className="product-button">
                         <Button
                             variant="outlined"

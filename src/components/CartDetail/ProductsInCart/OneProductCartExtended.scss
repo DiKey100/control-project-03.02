@@ -24,10 +24,12 @@
     @include flex(column);
     align-items: flex-start;
     height: 130px;
+    margin-bottom: 90px;
 }
 .cart-title {
     font-size: 40px;
     font-weight: 700;
+    margin-bottom: 90px;
 }
 .cart-price, .cart-count {
     @include flex(row);
@@ -44,7 +46,7 @@
     align-items: center;
     width: 350px;
 }
-.change-count, .delete-product {
+.open-change-count, .delete-product {
     font-size: 20px;
     color: yellow;
     &:hover {
@@ -60,5 +62,26 @@
     height: 525px;
     img {
         width: 450px;
+    }
+}
+
+.ch-count {
+    background-color: white;
+    color: red;
+    @include flex(column);
+}
+.close-sh-cart {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    &:hover {
+        cursor: pointer;
     }
 }
