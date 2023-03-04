@@ -1,6 +1,5 @@
 import { Container } from '@mui/material'
 import Cart from 'pages/Cart/Cart'
-import Contacts from 'pages/Contacts/Contacts'
 import Products from 'pages/Products/Products'
 import Saved from 'pages/Saved/Saved'
 import { Route, Routes } from 'react-router-dom'
@@ -12,12 +11,14 @@ type Props = {
         [id: number]: number
     }
     deleteProducts: (id: number) => void
+    changeCountProduct: (id: number, count: number) => void
 }
 
 const Main = ({
     addProductToCart,
     whatProductsInCart,
     deleteProducts,
+    changeCountProduct,
 }: Props) => {
     return (
         <Container
@@ -32,7 +33,6 @@ const Main = ({
                     path="/"
                     element={<Products addProductToCart={addProductToCart} />}
                 />
-                <Route path="contacts" element={<Contacts />} />
                 <Route path="saved" element={<Saved />} />
                 <Route
                     path="cart"
@@ -40,6 +40,7 @@ const Main = ({
                         <Cart
                             whatProductsInCart={whatProductsInCart}
                             deleteProducts={deleteProducts}
+                            changeCountProduct={changeCountProduct}
                         />
                     }
                 />
