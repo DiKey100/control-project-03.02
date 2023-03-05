@@ -19,7 +19,11 @@ const Home = (props: Props) => {
             >
                 Список товаров
             </Typography>
-            <Toolbar>
+            <Toolbar
+                style={{
+                    justifyContent: 'center',
+                }}
+            >
                 <FilterMenu />
             </Toolbar>
             <ProductsList />
