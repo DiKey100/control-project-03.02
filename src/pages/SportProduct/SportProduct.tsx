@@ -1,5 +1,5 @@
+import DetailProductItem from 'components/DetailProducts/DetailProductItem'
 import productsArray from 'utils/productsArray'
-import DetailProductItem from './DetailProductItem'
 
 type ProductProps = {
     id: number
@@ -9,16 +9,15 @@ type ProductProps = {
     image: string
     category?: string
 }
-
 type Props = {
     addProductToCart: (id: number, count: number) => void
 }
 
-const DetailProductsList = ({ addProductToCart }: Props) => {
+const SportProduct = ({ addProductToCart }: Props) => {
     return (
         <>
             {productsArray
-                .filter(({ category }: ProductProps) => category === 'street')
+                .filter(({ category }: ProductProps) => category === 'sport')
                 .map(({ id, title, price, color, image }: ProductProps) => (
                     <DetailProductItem
                         id={id}
@@ -33,4 +32,4 @@ const DetailProductsList = ({ addProductToCart }: Props) => {
     )
 }
 
-export default DetailProductsList
+export default SportProduct

@@ -1,5 +1,5 @@
+import DetailProductItem from 'components/DetailProducts/DetailProductItem'
 import productsArray from 'utils/productsArray'
-import DetailProductItem from './DetailProductItem'
 
 type ProductProps = {
     id: number
@@ -9,12 +9,11 @@ type ProductProps = {
     image: string
     category?: string
 }
-
 type Props = {
     addProductToCart: (id: number, count: number) => void
 }
 
-const DetailProductsList = ({ addProductToCart }: Props) => {
+const StreetProduct = ({ addProductToCart }: Props) => {
     return (
         <>
             {productsArray
@@ -33,4 +32,4 @@ const DetailProductsList = ({ addProductToCart }: Props) => {
     )
 }
 
-export default DetailProductsList
+export default StreetProduct

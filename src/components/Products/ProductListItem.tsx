@@ -9,17 +9,20 @@ type Props = {
 
 const ProductListItem = ({ title, price, image }: Props) => {
     return (
-        <Card className="product-list">
+        <Card className="sm-product-list">
             <CardContent>
-                <div className="product">
-                    <div className="product-info">
-                        <div className="title">{title}</div>
-                        <div className="price">Цена: {price} гривен</div>
-                        <Button variant="outlined" className="look-to-product">
+                <div className="sm-product">
+                    <div className="sm-product-info">
+                        <div className="sm-title">{title}</div>
+                        <div className="sm-price">Цена: {price} гривен</div>
+                        <Button
+                            variant="outlined"
+                            className="sm-look-to-product"
+                        >
                             Просмотреть товар
                         </Button>
                     </div>
-                    <div className="product-img">
+                    <div className="sm-product-img">
                         <img src={image} alt={title}></img>
                     </div>
                 </div>
