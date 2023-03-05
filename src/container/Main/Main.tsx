@@ -3,7 +3,10 @@ import Cart from 'pages/Cart/Cart'
 import Products from 'pages/Products/Products'
 import Saved from 'pages/Saved/Saved'
 import { Route, Routes } from 'react-router-dom'
-// import Home from 'pages/Home/Home'
+import Home from 'pages/Home/Home'
+import SportProduct from 'pages/SportProduct/SportProduct'
+import StreetProduct from 'pages/StreetProduct/StreetProduct'
+import BootsProduct from 'pages/BootsProduct/BootsProduct'
 
 type Props = {
     addProductToCart: (id: number, count: number) => void
@@ -29,8 +32,12 @@ const Main = ({
             component="main"
         >
             <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="sport" element={<SportProduct />} />
+                <Route path="street" element={<StreetProduct />} />
+                <Route path="boots" element={<BootsProduct />} />
                 <Route
-                    path="/"
+                    path="products-list"
                     element={<Products addProductToCart={addProductToCart} />}
                 />
                 <Route path="saved" element={<Saved />} />
@@ -45,7 +52,6 @@ const Main = ({
                     }
                 />
             </Routes>
-            {/* <Home /> */}
         </Container>
     )
 }

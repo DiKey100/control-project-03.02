@@ -10,10 +10,19 @@
     }
 }
 
+.prIn-top-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.bttn-like {
+    margin-top: 58px;
+}
 .title {
     font-weight: 700;
     font-size: 40px;
-    margin: 50px 20px 100px;
+    margin: 50px 0px 100px 20px;
 }    
 .price, .color {
     font-size: 25px;

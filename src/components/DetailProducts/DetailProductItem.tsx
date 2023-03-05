@@ -2,6 +2,8 @@ import { Button } from '@mui/material'
 import Quantity from 'components/Quantity/Quantity'
 import { useState } from 'react'
 import './DetailProductItem.scss'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 
 type Props = {
     id: number
@@ -10,6 +12,7 @@ type Props = {
     color: string
     image: string
     addProductToCart: (id: number, count: number) => void
+    isLiked?: boolean
 }
 
 const DetailProductItem = ({
@@ -19,6 +22,7 @@ const DetailProductItem = ({
     color,
     image,
     addProductToCart,
+    isLiked = false,
 }: Props) => {
     const [count, setCount] = useState<number>(1)
     const onDecrement = () => {
@@ -32,7 +36,16 @@ const DetailProductItem = ({
         <div className="product">
             <div className="product-info">
                 <div className="product-info-top">
-                    <div className="title">{title}</div>
+                    <div className="prIn-top-top">
+                        <div className="title">{title}</div>
+                        <Button className="bttn-like">
+                            {isLiked ? (
+                                <FavoriteIcon fontSize="large" />
+                            ) : (
+                                <FavoriteBorderIcon fontSize="large" />
+                            )}
+                        </Button>
+                    </div>
                     <div className="price">
                         <span>Цена:</span> <span>{price} </span>
                         гривен

@@ -1,29 +1,29 @@
-.product-list {
+.sm-product-list {
     box-shadow: 1px 0px 8px rgba(0, 3, 5, 0.5) ;
     border-radius: 20px;
-    .product {
+    .sm-product {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        .product-info {
+        .sm-product-info {
             padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            .title {
+            .sm-title {
                 font-weight: 700;
                 font-size: 23px;
                 height: 100px;
                 width: 229px;
                 text-align: center;
             }
-            .price {
+            .sm-price {
                 width: 135px;
                 text-align: center;
                 margin-top: 50px;
             }
         }
-        .product-img {
+        .sm-product-img {
             text-align: right;
             img {
                 margin-top: 5.5px;
@@ -38,7 +38,7 @@
     }
 }
 
-.look-to-product {
+.sm-look-to-product {
     margin-top: 125px;  
     padding: 5px 10px 3px;
     align-items: center;
