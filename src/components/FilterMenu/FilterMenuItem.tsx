@@ -9,12 +9,7 @@ type Props = {
 const FilterMenuItem = ({ to, children }: Props) => {
     return (
         <div>
-            <NavLink
-                className={({ isActive }) =>
-                    isActive ? 'filter-active' : 'filter-ignore'
-                }
-                to={to}
-            >
+            <NavLink className="filter-ignore" to={to}>
                 {children}
             </NavLink>
         </div>

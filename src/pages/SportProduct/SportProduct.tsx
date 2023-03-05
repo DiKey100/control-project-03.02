@@ -1,5 +1,9 @@
-import DetailProductItem from 'components/DetailProducts/DetailProductItem'
+import { Grid } from '@mui/material'
+import ProductListItem from 'components/Products/ProductListItem'
 import productsArray from 'utils/productsArray'
+import Toolbar from '@mui/material/Toolbar'
+import { NavLink } from 'react-router-dom'
+import '../../css/FilterProduct.scss'
 
 type ProductProps = {
     id: number
@@ -9,25 +13,36 @@ type ProductProps = {
     image: string
     category?: string
 }
-type Props = {
-    addProductToCart: (id: number, count: number) => void
-}
 
-const SportProduct = ({ addProductToCart }: Props) => {
+const SportProduct = () => {
     return (
         <>
-            {productsArray
-                .filter(({ category }: ProductProps) => category === 'sport')
-                .map(({ id, title, price, color, image }: ProductProps) => (
-                    <DetailProductItem
-                        id={id}
-                        title={title}
-                        price={price}
-                        color={color}
-                        image={image}
-                        addProductToCart={addProductToCart}
-                    />
-                ))}
+            <Toolbar>
+                <NavLink to="/" className="back-to-home">
+                    На главную...
+                </NavLink>
+            </Toolbar>
+            <Grid
+                container
+                spacing={5}
+                direction="row"
+                justifyContent="flex-start"
+                alignItems="center"
+            >
+                {productsArray
+                    .filter(
+                        ({ category }: ProductProps) => category === 'sport'
+                    )
+                    .map(({ id, title, price, image }: ProductProps) => (
+                        <Grid item xs={6} key={id}>
+                            <ProductListItem
+                                title={title}
+                                price={price}
+                                image={image}
+                            />
+                        </Grid>
+                    ))}
+            </Grid>
         </>
     )
 }
