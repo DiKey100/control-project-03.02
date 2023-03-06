@@ -31,7 +31,8 @@ const OneProductCartExtended = ({
                         <div className="cart-info">
                             <div className="cart-info-numb">
                                 <div className="cart-price">
-                                    Цена товара: <span>{product.price}</span>
+                                    Цена товара:{' '}
+                                    <span>{product.price} гривен</span>
                                 </div>
                                 <div className="cart-count">
                                     Количество товара:{' '}

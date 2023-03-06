@@ -41,12 +41,14 @@ const App = () => {
         }))
     }
 
-    const toggleLike = (id:number) => {
+    const toggleLike = (id: number) => {
         setLikeState((prevState: LikeState) => ({
             ...prevState,
             [id]: !prevState[id],
         }))
     }
+    const deleteLike = (id: number) =>
+        setLikeState((prevState: LikeState) => omit(prevState, [id]))
 
     return (
         <StyledEngineProvider injectFirst>
@@ -59,6 +61,7 @@ const App = () => {
                 changeCountProduct={changeCountProduct}
                 likeState={likeState}
                 toggleLike={toggleLike}
+                deleteLike={deleteLike}
             />
         </StyledEngineProvider>
     )

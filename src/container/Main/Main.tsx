@@ -19,6 +19,7 @@ type Props = {
         [id: number]: boolean
     }
     toggleLike: (id: number) => void
+    deleteLike: (id: number) => void
 }
 
 const Main = ({
@@ -28,6 +29,7 @@ const Main = ({
     changeCountProduct,
     likeState,
     toggleLike,
+    deleteLike,
 }: Props) => {
     return (
         <Container
@@ -81,7 +83,16 @@ const Main = ({
                         />
                     }
                 />
-                <Route path="saved" element={<Saved />} />
+                <Route
+                    path="saved"
+                    element={
+                        <Saved
+                            likeState={likeState}
+                            deleteLike={deleteLike}
+                            toggleLike={toggleLike}
+                        />
+                    }
+                />
                 <Route
                     path="cart"
                     element={
