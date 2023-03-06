@@ -41,6 +41,15 @@ const App = () => {
         }))
     }
 
+    const toggleLike = (id: number) => {
+        setLikeState((prevState: LikeState) => ({
+            ...prevState,
+            [id]: !prevState[id],
+        }))
+    }
+    const deleteLike = (id: number) =>
+        setLikeState((prevState: LikeState) => omit(prevState, [id]))
+
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
@@ -50,6 +59,9 @@ const App = () => {
                 whatProductsInCart={whatProductsInCart}
                 deleteProducts={deleteProducts}
                 changeCountProduct={changeCountProduct}
+                likeState={likeState}
+                toggleLike={toggleLike}
+                deleteLike={deleteLike}
             />
         </StyledEngineProvider>
     )
