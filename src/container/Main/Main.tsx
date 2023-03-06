@@ -15,6 +15,10 @@ type Props = {
     }
     deleteProducts: (id: number) => void
     changeCountProduct: (id: number, count: number) => void
+    likeState: {
+        [id: number]: boolean
+    }
+    toggleLike: (id: number) => void
 }
 
 const Main = ({
@@ -22,6 +26,8 @@ const Main = ({
     whatProductsInCart,
     deleteProducts,
     changeCountProduct,
+    likeState,
+    toggleLike,
 }: Props) => {
     return (
         <Container
@@ -32,13 +38,48 @@ const Main = ({
             component="main"
         >
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="sport" element={<SportProduct />} />
-                <Route path="street" element={<StreetProduct />} />
-                <Route path="boots" element={<BootsProduct />} />
+                <Route
+                    path="/"
+                    element={
+                        <Home likeState={likeState} toggleLike={toggleLike} />
+                    }
+                />
+                <Route
+                    path="sport"
+                    element={
+                        <SportProduct
+                            likeState={likeState}
+                            toggleLike={toggleLike}
+                        />
+                    }
+                />
+                <Route
+                    path="street"
+                    element={
+                        <StreetProduct
+                            likeState={likeState}
+                            toggleLike={toggleLike}
+                        />
+                    }
+                />
+                <Route
+                    path="boots"
+                    element={
+                        <BootsProduct
+                            likeState={likeState}
+                            toggleLike={toggleLike}
+                        />
+                    }
+                />
                 <Route
                     path="products-list"
-                    element={<Products addProductToCart={addProductToCart} />}
+                    element={
+                        <Products
+                            addProductToCart={addProductToCart}
+                            likeState={likeState}
+                            toggleLike={toggleLike}
+                        />
+                    }
                 />
                 <Route path="saved" element={<Saved />} />
                 <Route

@@ -13,8 +13,14 @@ type ProductProps = {
     image: string
     category?: string
 }
+type Props = {
+    likeState: {
+        [id: number]: boolean
+    }
+    toggleLike: (id: number) => void
+}
 
-const StreetProduct = () => {
+const StreetProduct = ({ likeState, toggleLike }: Props) => {
     return (
         <>
             <Toolbar>
@@ -36,9 +42,12 @@ const StreetProduct = () => {
                     .map(({ id, title, price, image }: ProductProps) => (
                         <Grid item xs={6} key={id}>
                             <ProductListItem
+                                id={id}
                                 title={title}
                                 price={price}
                                 image={image}
+                                isLiked={likeState[id]}
+                                toggleLike={toggleLike}
                             />
                         </Grid>
                     ))}
