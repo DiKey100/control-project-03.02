@@ -1,0 +1,52 @@
+@import "../../css/mixin";
+
+.like-product {
+    @include flex(row);
+    align-items: center;
+    width: 1200px;
+    padding: 0px;
+    border-radius: 20px;
+    background: black;
+    color: white;
+}
+.like-information {
+    @include flex(column);
+    align-items: center;
+    margin-left: 120px;
+    height: 400px;
+    margin-bottom: -24px;
+}
+.like-info {
+    @include flex(column);
+    align-items: center;
+    height: 250px;
+    width: 400px;
+}
+.like-title {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+
+.like-color {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: right;
+    &::before {
+        display: block;
+        content: "";
+        background-image: url(../../assets/palette.png);
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.like-image {
+    height: 525px;
+    img {
+        width: 450px;
+    }
+}

@@ -22,7 +22,7 @@ const Saved = ({ likeState, deleteLike, toggleLike }: Props) => {
                     fontWeight: '500',
                 }}
             >
-                Корзина
+                Избранное
             </Typography>
             <Grid
                 container

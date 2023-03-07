@@ -19,10 +19,14 @@ const OneProductLike = ({ product, deleteLike }: Props) => {
                     <div className="like-information">
                         <div className="like-info">
                             <div className="like-title">{product.title}</div>
-                            <div className="like-price">
-                                Цена товара: {product.price} гривен
+                            <div className="like-info-middle">
+                                <div className="like-price">
+                                    Цена товара: {product.price} гривен
+                                </div>
+                                <div className="like-color">
+                                    : {product.color}
+                                </div>
                             </div>
-                            <div className="like-color">: {product.color}</div>
                         </div>
                         <div className="like-bttns">
                             <Button
@@ -31,12 +35,13 @@ const OneProductLike = ({ product, deleteLike }: Props) => {
                             >
                                 Просмотреть товар
                             </Button>
-                            <div
+                            <Button
+                                variant="outlined"
                                 className="like-delete"
                                 onClick={() => deleteLike(product.id)}
                             >
                                 Убрать из Избранного
-                            </div>
+                            </Button>
                         </div>
                     </div>
                     <div className="like-image">
