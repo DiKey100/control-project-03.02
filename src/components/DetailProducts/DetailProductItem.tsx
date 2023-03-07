@@ -45,9 +45,15 @@ const DetailProductItem = ({
                             onClick={() => toggleLike(id)}
                         >
                             {isLiked ? (
-                                <FavoriteIcon fontSize="large" />
+                                <FavoriteIcon
+                                    fontSize="large"
+                                    className="heart"
+                                />
                             ) : (
-                                <FavoriteBorderIcon fontSize="large" />
+                                <FavoriteBorderIcon
+                                    fontSize="large"
+                                    className="heart"
+                                />
                             )}
                         </Button>
                     </div>
