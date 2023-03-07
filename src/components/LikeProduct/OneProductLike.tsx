@@ -1,13 +1,16 @@
 import { Button, Card, CardContent, Grid } from '@mui/material'
+import { useAppDispatch } from 'redux/hooks'
+import { deleteLike } from 'redux/likeReducer'
 import { ProductProps } from 'utils/productsArray'
 import './OneProductLike.scss'
 
 type Props = {
     product: ProductProps
-    deleteLike: (id: number) => void
 }
 
-const OneProductLike = ({ product, deleteLike }: Props) => {
+const OneProductLike = ({ product }: Props) => {
+    const dispatch = useAppDispatch()
+
     return (
         <Grid item xs={12}>
             <Card
@@ -19,10 +22,15 @@ const OneProductLike = ({ product, deleteLike }: Props) => {
                     <div className="like-information">
                         <div className="like-info">
                             <div className="like-title">{product.title}</div>
-                            <div className="like-price">
-                                Цена товара: {product.price} гривен
+                            <div className="like-info-middle">
+                                <div className="like-price">
+                                    Цена товара:{' '}
+                                    <span>{product.price} гривен</span>
+                                </div>
+                                <div className="like-color">
+                                    <span>{product.color}</span>
+                                </div>
                             </div>
-                            <div className="like-color">: {product.color}</div>
                         </div>
                         <div className="like-bttns">
                             <Button
@@ -31,12 +39,13 @@ const OneProductLike = ({ product, deleteLike }: Props) => {
                             >
                                 Просмотреть товар
                             </Button>
-                            <div
+                            <Button
+                                variant="outlined"
                                 className="like-delete"
-                                onClick={() => deleteLike(product.id)}
+                                onClick={() => dispatch(deleteLike(product.id))}
                             >
                                 Убрать из Избранного
-                            </div>
+                            </Button>
                         </div>
                     </div>
                     <div className="like-image">

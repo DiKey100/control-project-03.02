@@ -12,22 +12,13 @@ type ProductProps = {
 
 type Props = {
     addProductToCart: (id: number, count: number) => void
-    likeState: {
-        [id: number]: boolean
-    }
-    toggleLike: (id: number) => void
 }
 
-const DetailProductsList = ({
-    addProductToCart,
-    likeState,
-    toggleLike,
-}: Props) => {
+const DetailProductsList = ({ addProductToCart }: Props) => {
     return (
         <>
-            {productsArray
-                .filter(({ category }: ProductProps) => category === 'street')
-                .map(({ id, title, price, color, image }: ProductProps) => (
+            {productsArray.map(
+                ({ id, title, price, color, image }: ProductProps) => (
                     <DetailProductItem
                         id={id}
                         title={title}
@@ -35,10 +26,9 @@ const DetailProductsList = ({
                         color={color}
                         image={image}
                         addProductToCart={addProductToCart}
-                        isLiked={likeState[id]}
-                        toggleLike={toggleLike}
                     />
-                ))}
+                )
+            )}
         </>
     )
 }

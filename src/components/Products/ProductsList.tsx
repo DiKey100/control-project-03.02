@@ -8,14 +8,8 @@ type ProductProps = {
     price: number
     image: string
 }
-type Props = {
-    likeState: {
-        [id: number]: boolean
-    }
-    toggleLike: (id: number) => void
-}
 
-const ProductsList = ({ likeState, toggleLike }: Props) => {
+const ProductsList = () => {
     return (
         <>
             <Grid
@@ -33,8 +27,6 @@ const ProductsList = ({ likeState, toggleLike }: Props) => {
                                 title={title}
                                 price={price}
                                 image={image}
-                                isLiked={likeState[id]}
-                                toggleLike={toggleLike}
                             />
                         </Grid>
                     )
