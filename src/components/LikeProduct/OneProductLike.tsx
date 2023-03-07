@@ -1,13 +1,16 @@
 import { Button, Card, CardContent, Grid } from '@mui/material'
+import { useAppDispatch } from 'redux/hooks'
+import { deleteLike } from 'redux/likeReducer'
 import { ProductProps } from 'utils/productsArray'
 import './OneProductLike.scss'
 
 type Props = {
     product: ProductProps
-    deleteLike: (id: number) => void
 }
 
-const OneProductLike = ({ product, deleteLike }: Props) => {
+const OneProductLike = ({ product }: Props) => {
+    const dispatch = useAppDispatch()
+
     return (
         <Grid item xs={12}>
             <Card
@@ -39,7 +42,7 @@ const OneProductLike = ({ product, deleteLike }: Props) => {
                             <Button
                                 variant="outlined"
                                 className="like-delete"
-                                onClick={() => deleteLike(product.id)}
+                                onClick={() => dispatch(deleteLike(product.id))}
                             >
                                 Убрать из Избранного
                             </Button>

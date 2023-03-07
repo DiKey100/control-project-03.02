@@ -1,4 +1,6 @@
 import { Button, Card, CardContent } from '@mui/material'
+import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { toggleLike } from 'redux/likeReducer'
 import ActiveLike from './Like/ActiveLike'
 import DefaultLike from './Like/DefaultLike'
 import './ProductListItem.scss'
@@ -8,18 +10,12 @@ type Props = {
     title: string
     price: number
     image: string
-    isLiked?: boolean
-    toggleLike: (id: number) => void
 }
 
-const ProductListItem = ({
-    id,
-    title,
-    price,
-    image,
-    isLiked = false,
-    toggleLike,
-}: Props) => {
+const ProductListItem = ({ id, title, price, image }: Props) => {
+    const isLiked = useAppSelector((state) => state.likeProducts[id])
+    const dispatch = useAppDispatch()
+
     return (
         <Card className="sm-product-list">
             <CardContent>
@@ -27,7 +23,10 @@ const ProductListItem = ({
                     <div className="sm-product-info">
                         <div className="sm-title">{title}</div>
                         <div className="sm-price">Цена: {price} гривен</div>
-                        <div className="sm-like" onClick={() => toggleLike(id)}>
+                        <div
+                            className="sm-like"
+                            onClick={() => dispatch(toggleLike(id))}
+                        >
                             {isLiked ? <ActiveLike /> : <DefaultLike />}
                         </div>
                         <Button

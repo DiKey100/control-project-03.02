@@ -1,3 +1,4 @@
+import { likeSlice } from 'redux/likeReducer'
 import productsArray, {
     getProductsObject,
     ProductProps,
@@ -5,29 +6,22 @@ import productsArray, {
 import OneProductLike from './OneProductLike'
 
 type Props = {
-    likeState: {
-        [id: number]: boolean
-    }
     productsObject?: {
         [id: number]: ProductProps
     }
     CartItem?: any
-    deleteLike: (id: number) => void
 }
 
 const ProductsInSaved = ({
-    likeState,
     productsObject = getProductsObject(productsArray),
     CartItem = OneProductLike,
-    deleteLike,
 }: Props) => {
     return (
         <>
-            {Object.keys(likeState).map((productId) => (
+            {Object.keys(likeSlice.reducer).map((productId) => (
                 <CartItem
                     key={productId}
                     product={productsObject[parseInt(productId)]}
-                    deleteLike={deleteLike}
                 />
             ))}
         </>

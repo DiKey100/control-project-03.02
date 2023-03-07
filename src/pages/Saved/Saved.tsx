@@ -2,15 +2,7 @@ import { Grid, Typography } from '@mui/material'
 import ProductsInSaved from 'components/LikeProduct/ProductsInSaved'
 import './Saved.scss'
 
-type Props = {
-    likeState: {
-        [id: number]: boolean
-    }
-    deleteLike: (id: number) => void
-    toggleLike: (id: number) => void
-}
-
-const Saved = ({ likeState, deleteLike, toggleLike }: Props) => {
+const Saved = () => {
     return (
         <>
             <Typography
@@ -31,10 +23,7 @@ const Saved = ({ likeState, deleteLike, toggleLike }: Props) => {
                 alignItems="center"
                 spacing={3}
             >
-                <ProductsInSaved
-                    likeState={likeState}
-                    deleteLike={deleteLike}
-                />
+                <ProductsInSaved />
             </Grid>
         </>
     )

@@ -3,14 +3,7 @@ import FilterMenu from 'components/FilterMenu/FilterMenu'
 import ProductsList from 'components/Products/ProductsList'
 import Toolbar from '@mui/material/Toolbar'
 
-type Props = {
-    likeState: {
-        [id: number]: boolean
-    }
-    toggleLike: (id: number) => void
-}
-
-const Home = ({ likeState, toggleLike }: Props) => {
+const Home = () => {
     return (
         <>
             <Typography
@@ -31,7 +24,7 @@ const Home = ({ likeState, toggleLike }: Props) => {
             >
                 <FilterMenu />
             </Toolbar>
-            <ProductsList likeState={likeState} toggleLike={toggleLike} />
+            <ProductsList />
         </>
     )
 }
