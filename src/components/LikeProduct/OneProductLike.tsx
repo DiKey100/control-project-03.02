@@ -21,10 +21,11 @@ const OneProductLike = ({ product, deleteLike }: Props) => {
                             <div className="like-title">{product.title}</div>
                             <div className="like-info-middle">
                                 <div className="like-price">
-                                    Цена товара: {product.price} гривен
+                                    Цена товара:{' '}
+                                    <span>{product.price} гривен</span>
                                 </div>
                                 <div className="like-color">
-                                    : {product.color}
+                                    <span>{product.color}</span>
                                 </div>
                             </div>
                         </div>

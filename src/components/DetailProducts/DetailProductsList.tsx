@@ -25,9 +25,8 @@ const DetailProductsList = ({
 }: Props) => {
     return (
         <>
-            {productsArray
-                .filter(({ category }: ProductProps) => category === 'street')
-                .map(({ id, title, price, color, image }: ProductProps) => (
+            {productsArray.map(
+                ({ id, title, price, color, image }: ProductProps) => (
                     <DetailProductItem
                         id={id}
                         title={title}
@@ -38,7 +37,8 @@ const DetailProductsList = ({
                         isLiked={likeState[id]}
                         toggleLike={toggleLike}
                     />
-                ))}
+                )
+            )}
         </>
     )
 }

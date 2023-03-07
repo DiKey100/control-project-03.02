@@ -7,6 +7,7 @@
     padding: 0px;
     border-radius: 20px;
     background: black;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(112,112,112,1) 65%, rgba(255,255,255,1) 100%);
     color: white;
 }
 .like-information {
@@ -14,6 +15,7 @@
     align-items: center;
     margin-left: 120px;
     height: 400px;
+    width: 500px;
     margin-bottom: -24px;
 }
 .like-info {
@@ -26,13 +28,43 @@
     font-size: 40px;
     font-weight: 700;
 }
+.like-info-middle {
+    @include flex(column);
+    align-items: center;
+    width: 380px;
+    height: 90px;
+}
+.like-price, .like-color {
+    @include flex(row);
+    align-items: center;
+    width: 380px;
+    font-size: 20px;
+    span {
+        color: #FFCA14;
+        font-weight: 600;
+    }
+}
+.like-bttns {
+    @include flex(row);
+    align-items: center;
+    width: 400px;
+}
+.like-look-to-product, .like-delete {
+    padding: 5px 10px;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-weight: 500;
+    &:hover {
+        border: 1px solid black;
+        background-color: black;
+        color: #FFCA14;
+    }
+}
 
 
 .like-color {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: right;
     &::before {
         display: block;
         content: "";
