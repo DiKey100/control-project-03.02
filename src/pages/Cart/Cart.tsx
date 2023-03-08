@@ -5,12 +5,7 @@ import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
 import { useAppSelector } from 'redux/hooks'
 import './Cart.scss'
 
-type Props = {
-    deleteProducts: (id: number) => void
-    changeCountProduct: (id: number, count: number) => void
-}
-
-const Cart = ({ deleteProducts, changeCountProduct }: Props) => {
+const Cart = () => {
     const productsInCart = useAppSelector((state) => state.productsInCart)
 
     return (
@@ -36,8 +31,6 @@ const Cart = ({ deleteProducts, changeCountProduct }: Props) => {
                 <ProductsInCart
                     productsInCart={productsInCart}
                     CartItem={OneProductCartExtended}
-                    deleteProducts={deleteProducts}
-                    changeCountProduct={changeCountProduct}
                 />
             </Grid>
             <TotalPrice productsInCart={productsInCart} />

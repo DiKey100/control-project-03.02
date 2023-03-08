@@ -10,11 +10,7 @@ type ProductProps = {
     category?: string
 }
 
-type Props = {
-    addProductToCart: (id: number, count: number) => void
-}
-
-const DetailProductsList = ({ addProductToCart }: Props) => {
+const DetailProductsList = () => {
     return (
         <>
             {productsArray.map(
@@ -25,7 +21,6 @@ const DetailProductsList = ({ addProductToCart }: Props) => {
                         price={price}
                         color={color}
                         image={image}
-                        addProductToCart={addProductToCart}
                     />
                 )
             )}
