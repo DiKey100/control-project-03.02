@@ -11,7 +11,7 @@ export const initialState:LikeProducts = {
 }
 
 export const likeSlice = createSlice({
-    name: "like",
+    name: "likeInCart",
     initialState,
     reducers: {
         toggleLike: (prevState, action) => ({

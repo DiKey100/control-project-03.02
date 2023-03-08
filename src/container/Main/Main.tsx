@@ -10,16 +10,12 @@ import BootsProduct from 'pages/BootsProduct/BootsProduct'
 
 type Props = {
     addProductToCart: (id: number, count: number) => void
-    whatProductsInCart: {
-        [id: number]: number
-    }
     deleteProducts: (id: number) => void
     changeCountProduct: (id: number, count: number) => void
 }
 
 const Main = ({
     addProductToCart,
-    whatProductsInCart,
     deleteProducts,
     changeCountProduct,
 }: Props) => {
@@ -45,7 +41,6 @@ const Main = ({
                     path="cart"
                     element={
                         <Cart
-                            whatProductsInCart={whatProductsInCart}
                             deleteProducts={deleteProducts}
                             changeCountProduct={changeCountProduct}
                         />

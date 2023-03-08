@@ -5,7 +5,7 @@ import productsArray, {
 import OneProductCart from './OneProductCart'
 
 type Props = {
-    whatProductsInCart: {
+    productsInCart: {
         [id: number]: number
     }
     productsObject?: {
@@ -17,7 +17,7 @@ type Props = {
 }
 
 const ProductsInCart = ({
-    whatProductsInCart,
+    productsInCart,
     productsObject = getProductsObject(productsArray),
     CartItem = OneProductCart,
     deleteProducts,
@@ -25,11 +25,11 @@ const ProductsInCart = ({
 }: Props) => {
     return (
         <>
-            {Object.keys(whatProductsInCart).map((productId) => (
+            {Object.keys(productsInCart).map((productId) => (
                 <CartItem
                     key={productId}
                     product={productsObject[parseInt(productId)]}
-                    productCount={whatProductsInCart[parseInt(productId)]}
+                    productCount={productsInCart[parseInt(productId)]}
                     deleteProducts={deleteProducts}
                     changeCountProduct={changeCountProduct}
                 />

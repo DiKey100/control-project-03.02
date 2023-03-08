@@ -1,8 +1,11 @@
 import { Grid, Typography } from '@mui/material'
 import ProductsInSaved from 'components/LikeProduct/ProductsInSaved'
+import { useAppSelector } from 'redux/hooks'
 import './Saved.scss'
 
 const Saved = () => {
+    const likeInCart = useAppSelector((state) => state.likeProducts)
+
     return (
         <>
             <Typography
@@ -23,7 +26,7 @@ const Saved = () => {
                 alignItems="center"
                 spacing={3}
             >
-                <ProductsInSaved />
+                <ProductsInSaved likeInCart={likeInCart} />
             </Grid>
         </>
     )

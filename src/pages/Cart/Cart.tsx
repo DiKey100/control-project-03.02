@@ -2,21 +2,17 @@ import { Grid, Typography } from '@mui/material'
 import OneProductCartExtended from 'components/CartDetail/ProductsInCart/OneProductCartExtended'
 import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
 import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
+import { useAppSelector } from 'redux/hooks'
 import './Cart.scss'
 
 type Props = {
-    whatProductsInCart: {
-        [id: number]: number
-    }
     deleteProducts: (id: number) => void
     changeCountProduct: (id: number, count: number) => void
 }
 
-const Cart = ({
-    whatProductsInCart,
-    deleteProducts,
-    changeCountProduct,
-}: Props) => {
+const Cart = ({ deleteProducts, changeCountProduct }: Props) => {
+    const productsInCart = useAppSelector((state) => state.productsInCart)
+
     return (
         <div>
             <Typography
@@ -38,13 +34,13 @@ const Cart = ({
                 spacing={3}
             >
                 <ProductsInCart
-                    whatProductsInCart={whatProductsInCart}
+                    productsInCart={productsInCart}
                     CartItem={OneProductCartExtended}
                     deleteProducts={deleteProducts}
                     changeCountProduct={changeCountProduct}
                 />
             </Grid>
-            <TotalPrice whatProductsInCart={whatProductsInCart} />
+            <TotalPrice productsInCart={productsInCart} />
         </div>
     )
 }

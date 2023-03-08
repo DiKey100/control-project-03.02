@@ -36,10 +36,9 @@ const App = () => {
     return (
         <StyledEngineProvider injectFirst>
             <CssBaseline />
-            <Header whatProductsInCart={whatProductsInCart} />
+            <Header />
             <Main
                 addProductToCart={addProductToCart}
-                whatProductsInCart={whatProductsInCart}
                 deleteProducts={deleteProducts}
                 changeCountProduct={changeCountProduct}
             />
