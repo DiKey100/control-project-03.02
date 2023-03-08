@@ -8,21 +8,7 @@ import SportProduct from 'pages/SportProduct/SportProduct'
 import StreetProduct from 'pages/StreetProduct/StreetProduct'
 import BootsProduct from 'pages/BootsProduct/BootsProduct'
 
-type Props = {
-    addProductToCart: (id: number, count: number) => void
-    whatProductsInCart: {
-        [id: number]: number
-    }
-    deleteProducts: (id: number) => void
-    changeCountProduct: (id: number, count: number) => void
-}
-
-const Main = ({
-    addProductToCart,
-    whatProductsInCart,
-    deleteProducts,
-    changeCountProduct,
-}: Props) => {
+const Main = () => {
     return (
         <Container
             maxWidth="lg"
@@ -36,21 +22,9 @@ const Main = ({
                 <Route path="sport" element={<SportProduct />} />
                 <Route path="street" element={<StreetProduct />} />
                 <Route path="boots" element={<BootsProduct />} />
-                <Route
-                    path="products-list"
-                    element={<Products addProductToCart={addProductToCart} />}
-                />
+                <Route path="products-list" element={<Products />} />
                 <Route path="saved" element={<Saved />} />
-                <Route
-                    path="cart"
-                    element={
-                        <Cart
-                            whatProductsInCart={whatProductsInCart}
-                            deleteProducts={deleteProducts}
-                            changeCountProduct={changeCountProduct}
-                        />
-                    }
-                />
+                <Route path="cart" element={<Cart />} />
             </Routes>
         </Container>
     )

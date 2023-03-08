@@ -1,16 +1,13 @@
 import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
 import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
 import { useState } from 'react'
+import { useAppSelector } from 'redux/hooks'
 import './CartHeader.scss'
 
-type Props = {
-    whatProductsInCart: {
-        [id: number]: number
-    }
-}
-
-const CartHeader = ({ whatProductsInCart }: Props) => {
+const CartHeader = () => {
     const [isShortCartShow, setIsShortCartShow] = useState<boolean>(false)
+    const productsInCart = useAppSelector((state) => state.productsInCart)
+
     return (
         <div>
             <button
@@ -26,10 +23,8 @@ const CartHeader = ({ whatProductsInCart }: Props) => {
                         X
                     </div>
                     <div className="sh-cart-info">
-                        <ProductsInCart
-                            whatProductsInCart={whatProductsInCart}
-                        />
-                        <TotalPrice whatProductsInCart={whatProductsInCart} />
+                        <ProductsInCart productsInCart={productsInCart} />
+                        <TotalPrice productsInCart={productsInCart} />
                     </div>
                 </div>
             )}

@@ -1,23 +1,20 @@
 import { Card, CardContent, Grid } from '@mui/material'
 import Quantity from 'components/Quantity/Quantity'
 import { useState } from 'react'
+import { changeCount, deleteProduct } from 'redux/cartReducer'
+import { useAppDispatch } from 'redux/hooks'
 import { ProductProps } from 'utils/productsArray'
 import './OneProductCartExtended.scss'
 
 type Props = {
     productCount: number
     product: ProductProps
-    deleteProducts: (id: number) => void
-    changeCountProduct: (id: number, count: number) => void
 }
 
-const OneProductCartExtended = ({
-    product,
-    productCount,
-    deleteProducts,
-    changeCountProduct,
-}: Props) => {
+const OneProductCartExtended = ({ product, productCount }: Props) => {
     const [isChangeCountShow, setIsChangeCountShow] = useState<boolean>(false)
+    const dispatch = useAppDispatch()
+
     return (
         <Grid item xs={12}>
             <Card
@@ -52,15 +49,19 @@ const OneProductCartExtended = ({
                                     <Quantity
                                         count={productCount}
                                         onDecrement={() =>
-                                            changeCountProduct(
-                                                product.id,
-                                                productCount - 1
+                                            dispatch(
+                                                changeCount({
+                                                    id: product.id,
+                                                    count: productCount - 1,
+                                                })
                                             )
                                         }
                                         onIncrement={() =>
-                                            changeCountProduct(
-                                                product.id,
-                                                productCount + 1
+                                            dispatch(
+                                                changeCount({
+                                                    id: product.id,
+                                                    count: productCount + 1,
+                                                })
                                             )
                                         }
                                     />
@@ -76,7 +77,9 @@ const OneProductCartExtended = ({
 
                                 <div
                                     className="delete-product"
-                                    onClick={() => deleteProducts(product.id)}
+                                    onClick={() =>
+                                        dispatch(deleteProduct(product.id))
+                                    }
                                 >
                                     Удалить товар
                                 </div>
