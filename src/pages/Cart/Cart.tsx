@@ -2,6 +2,7 @@ import { Grid, Typography } from '@mui/material'
 import OneProductCartExtended from 'components/CartDetail/ProductsInCart/OneProductCartExtended'
 import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
 import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
+import { Link } from 'react-router-dom'
 import { useAppSelector } from 'redux/hooks'
 import './Cart.scss'
 
@@ -34,6 +35,7 @@ const Cart = () => {
                 />
             </Grid>
             <TotalPrice productsInCart={productsInCart} />
+            <Link to="/payment">Подтверждение заказа</Link>
         </div>
     )
 }

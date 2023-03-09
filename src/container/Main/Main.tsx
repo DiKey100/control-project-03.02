@@ -7,6 +7,7 @@ import Home from 'pages/Home/Home'
 import SportProduct from 'pages/SportProduct/SportProduct'
 import StreetProduct from 'pages/StreetProduct/StreetProduct'
 import BootsProduct from 'pages/BootsProduct/BootsProduct'
+import OrderConfirmation from 'pages/OrderConfirmation/OrderConfirmation'
 
 const Main = () => {
     return (
@@ -25,6 +26,10 @@ const Main = () => {
                 <Route path="products-list" element={<Products />} />
                 <Route path="saved" element={<Saved />} />
                 <Route path="cart" element={<Cart />} />
+                <Route
+                    path="order-confirmation"
+                    element={<OrderConfirmation />}
+                />
             </Routes>
         </Container>
     )
