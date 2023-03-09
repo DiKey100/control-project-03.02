@@ -1,3 +1,14 @@
 .total-price {
     margin-top: 50px;
+    margin-left: 25px;
+    width: 1150px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    span {
+        font-size: 35px;
+        font-weight: 600;
+    }
 }

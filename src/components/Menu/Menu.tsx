@@ -1,8 +1,6 @@
 import MenuItem from './MenuItem'
 
-type Props = {}
-
-const Menu = (props: Props) => {
+const Menu = () => {
     return (
         <>
             <MenuItem to="/">Главная</MenuItem>
