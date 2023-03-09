@@ -19,14 +19,16 @@ const TotalPrice = ({
     return (
         <div className="total-price">
             Общая сумма:{' '}
-            {Object.keys(productsInCart).reduce(
-                (total, productId) =>
-                    total +
-                    productsInCart[parseInt(productId)] *
-                        productsObject[parseInt(productId)].price,
-                0
-            )}{' '}
-            гривен
+            <span>
+                {Object.keys(productsInCart).reduce(
+                    (total, productId) =>
+                        total +
+                        productsInCart[parseInt(productId)] *
+                            productsObject[parseInt(productId)].price,
+                    0
+                )}{' '}
+                гривен
+            </span>
         </div>
     )
 }

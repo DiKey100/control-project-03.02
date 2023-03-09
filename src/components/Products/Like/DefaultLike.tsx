@@ -1,6 +1,4 @@
-type Props = {}
-
-const DefaultLike = (props: Props) => {
+const DefaultLike = () => {
     return <div>Добавить в Избранное</div>
 }
 

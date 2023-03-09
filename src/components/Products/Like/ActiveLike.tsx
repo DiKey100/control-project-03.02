@@ -1,6 +1,4 @@
-type Props = {}
-
-const ActiveLike = (props: Props) => {
+const ActiveLike = () => {
     return <div>Убрать из Избранного</div>
 }
 

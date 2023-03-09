@@ -1,8 +1,6 @@
 import FilterMenuItem from './FilterMenuItem'
 
-type Props = {}
-
-const FilterMenu = (props: Props) => {
+const FilterMenu = () => {
     return (
         <div className="filter-menu">
             <FilterMenuItem to="/sport">Спортивные</FilterMenuItem>
