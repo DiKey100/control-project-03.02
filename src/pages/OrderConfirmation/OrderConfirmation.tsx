@@ -29,13 +29,10 @@ const Payment = () => {
     const onSend = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         axios
-            .post(
-                'https://my-json-server.typicode.com/kznkv-skillup/server/orders',
-                {
-                    name: orderData.name,
-                    email: orderData.email,
-                }
-            )
+            .post('https://my-json-server.typicode.com/DiKey100/server/db', {
+                name: orderData.name,
+                email: orderData.email,
+            })
             .then((res) => res.data)
             .then(({ name, email }) => {
                 setIsOrderSend(true)
