@@ -35,7 +35,7 @@ const Cart = () => {
                 />
             </Grid>
             <TotalPrice productsInCart={productsInCart} />
-            <Link to="/payment">Подтверждение заказа</Link>
+            <Link to="/order-confirmation">Подтверждение заказа</Link>
         </div>
     )
 }
