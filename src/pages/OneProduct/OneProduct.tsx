@@ -38,7 +38,7 @@ const OneProduct = () => {
                         <div className="title">{product.title}</div>
                         <Button
                             className="bttn-like"
-                            onClick={() => dispatch(toggleLike(id))}
+                            onClick={() => dispatch(toggleLike(product.id))}
                         >
                             {isLiked ? (
                                 <FavoriteIcon
@@ -57,7 +57,7 @@ const OneProduct = () => {
                         <span>Цена:</span> <span>{product.price} </span>
                         гривен
                     </div>
-                    <div className="color">: {product.color}</div>
+                    <div className="color">{product.color}</div>
                 </div>
                 <div className="product-info-middle">
                     <Quantity

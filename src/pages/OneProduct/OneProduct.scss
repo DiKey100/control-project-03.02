@@ -1,7 +1,7 @@
+@import '../../css/mixin';
+
 .product {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex(row);
     margin-bottom: 100px;
     .product-info {
         width: 560px;
@@ -11,9 +11,7 @@
 }
 
 .prIn-top-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex(row);
     align-items: flex-start;
 }
 .bttn-like {
@@ -25,12 +23,12 @@
     margin: 50px 0px 100px 20px;
 }    
 .price, .color {
-    font-size: 25px;
+    font-size: 27px;
 }
 .price {
     margin-left: 20px;
     margin-bottom: 50px;
-    width: 220px;
+    width: 250px;
     span {
         &:first-child {
             font-weight: 500;
@@ -41,12 +39,11 @@
     }
 }
 .color {
-    display: flex;
-    justify-content: flex-start;
+    @include flex(row);
     align-items: center;
     margin-left: 18px;
     margin-bottom: 70px;
-    text-align: right;
+    width: 468px;
     &::before {
         display: block;
         content: "";
