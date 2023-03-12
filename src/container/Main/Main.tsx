@@ -6,7 +6,6 @@ import Home from 'pages/Home/Home'
 import SportProduct from 'pages/SportProduct/SportProduct'
 import StreetProduct from 'pages/StreetProduct/StreetProduct'
 import BootsProduct from 'pages/BootsProduct/BootsProduct'
-import OrderConfirmation from 'pages/OrderConfirmation/OrderConfirmation'
 import OneProduct from 'pages/OneProduct/OneProduct'
 
 const Main = () => {
@@ -26,10 +25,6 @@ const Main = () => {
                 <Route path="boots" element={<BootsProduct />} />
                 <Route path="saved" element={<Saved />} />
                 <Route path="cart" element={<Cart />} />
-                <Route
-                    path="order-confirmation"
-                    element={<OrderConfirmation />}
-                />
                 <Route path="products/:id" element={<OneProduct />} />
             </Routes>
         </Container>

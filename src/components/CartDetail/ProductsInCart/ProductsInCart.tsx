@@ -3,21 +3,16 @@ import { getProductsObject, ProductProps } from 'utils/productsArray'
 import OneProductCart from './OneProductCart'
 
 type Props = {
-    productsInCart: {
-        [id: number]: number
-    }
     CartItem?: any
 }
 type ProductsObject = {
     [id: number]: ProductProps
 }
 
-const ProductsInCart = ({
-    productsInCart,
-    CartItem = OneProductCart,
-}: Props) => {
+const ProductsInCart = ({ CartItem = OneProductCart }: Props) => {
     const productsArray = useAppSelector((state) => state.products)
     const productsObject: ProductsObject = getProductsObject(productsArray)
+    const productsInCart = useAppSelector((state) => state.productsInCart)
 
     return (
         <>
