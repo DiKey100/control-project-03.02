@@ -1,4 +1,5 @@
 import { Button, Card, CardContent } from '@mui/material'
+import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
 import { toggleLike } from 'redux/likeReducer'
 import ActiveLike from './Like/ActiveLike'
@@ -33,7 +34,9 @@ const ProductListItem = ({ id, title, price, image }: Props) => {
                             variant="outlined"
                             className="sm-look-to-product"
                         >
-                            Просмотреть товар
+                            <Link to={`/products/${id}`}>
+                                Просмотреть товар
+                            </Link>
                         </Button>
                     </div>
                     <div className="sm-product-img">
