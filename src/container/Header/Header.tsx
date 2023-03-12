@@ -9,7 +9,7 @@ import CartHeader from 'components/CartHeader/CartHeader'
 const Header = () => {
     return (
         <>
-            <AppBar position="static" className="app-bar">
+            <AppBar position="fixed" className="app-bar">
                 <Container maxWidth="lg">
                     <Toolbar>
                         <Logo />

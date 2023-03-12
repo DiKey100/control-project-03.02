@@ -14,6 +14,7 @@ const Main = () => {
         <Container
             maxWidth="lg"
             sx={{
+                marginTop: '100px',
                 padding: '50px 0',
             }}
             component="main"
