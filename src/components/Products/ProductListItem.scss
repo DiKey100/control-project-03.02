@@ -18,7 +18,7 @@
                 text-align: center;
             }
             .sm-price {
-                width: 135px;
+                width: 145px;
                 text-align: center;
                 margin-top: 50px;
             }
@@ -50,7 +50,6 @@
     margin-top: 100px;  
     padding: 5px 10px 3px;
     align-items: center;
-    color: black;
     border: 1px black solid;
     border-radius: 10px;
     
@@ -59,6 +58,12 @@
     &:hover {
         border: 1px solid black;
         background-color: black;
+    }
+}
+.sm-ltp-link {
+    text-decoration: none;
+    color: black;
+    &:hover {
         color: white;
     }
 }

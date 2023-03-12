@@ -1,22 +1,24 @@
 import { Button } from '@mui/material'
-import Quantity from 'components/Quantity/Quantity'
 import { useState } from 'react'
-import './DetailProductItem.scss'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
-import FavoriteIcon from '@mui/icons-material/Favorite'
+import { useParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from 'redux/hooks'
+import { getProductsObject, ProductProps } from 'utils/productsArray'
 import { toggleLike } from 'redux/likeReducer'
 import { addProductToCart } from 'redux/cartReducer'
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
+import FavoriteIcon from '@mui/icons-material/Favorite'
+import Quantity from 'components/Quantity/Quantity'
+import './OneProduct.scss'
 
-type Props = {
-    id: number
-    title: string
-    price: number
-    color: string
-    image: string
+type ProductsObject = {
+    [id: number]: ProductProps
 }
 
-const DetailProductItem = ({ id, title, price, color, image }: Props) => {
+const OneProduct = () => {
+    const { id } = useParams()
+    const productsArray = useAppSelector((state) => state.products)
+    const productsObject: ProductsObject = getProductsObject(productsArray)
+    const product = productsObject[parseInt(id!)]
     const [count, setCount] = useState<number>(1)
     const onDecrement = () => {
         setCount((prevState: number) => prevState - 1)
@@ -25,7 +27,7 @@ const DetailProductItem = ({ id, title, price, color, image }: Props) => {
         setCount((prevState: number) => prevState + 1)
     }
 
-    const isLiked = useAppSelector((state) => state.likeProducts[id])
+    const isLiked = useAppSelector((state) => state.likeProducts[parseInt(id!)])
     const dispatch = useAppDispatch()
 
     return (
@@ -33,10 +35,10 @@ const DetailProductItem = ({ id, title, price, color, image }: Props) => {
             <div className="product-info">
                 <div className="product-info-top">
                     <div className="prIn-top-top">
-                        <div className="title">{title}</div>
+                        <div className="title">{product.title}</div>
                         <Button
                             className="bttn-like"
-                            onClick={() => dispatch(toggleLike(id))}
+                            onClick={() => dispatch(toggleLike(product.id))}
                         >
                             {isLiked ? (
                                 <FavoriteIcon
@@ -52,10 +54,10 @@ const DetailProductItem = ({ id, title, price, color, image }: Props) => {
                         </Button>
                     </div>
                     <div className="price">
-                        <span>Цена:</span> <span>{price} </span>
+                        <span>Цена:</span> <span>{product.price} </span>
                         гривен
                     </div>
-                    <div className="color">: {color}</div>
+                    <div className="color">{product.color}</div>
                 </div>
                 <div className="product-info-middle">
                     <Quantity
@@ -77,10 +79,10 @@ const DetailProductItem = ({ id, title, price, color, image }: Props) => {
                 </div>
             </div>
             <div className="product-image">
-                <img src={image} alt={title}></img>
+                <img src={product.image} alt={product.title}></img>
             </div>
         </div>
     )
 }
 
-export default DetailProductItem
+export default OneProduct

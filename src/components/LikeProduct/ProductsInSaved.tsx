@@ -1,24 +1,19 @@
-import productsArray, {
-    getProductsObject,
-    ProductProps,
-} from 'utils/productsArray'
+import { useAppSelector } from 'redux/hooks'
+import { getProductsObject, ProductProps } from 'utils/productsArray'
 import OneProductLike from './OneProductLike'
 
 type Props = {
-    likeInCart: {
-        [id: number]: boolean
-    }
-    productsObject?: {
-        [id: number]: ProductProps
-    }
     CartItem?: any
 }
+type ProductsObject = {
+    [id: number]: ProductProps
+}
 
-const ProductsInSaved = ({
-    likeInCart,
-    productsObject = getProductsObject(productsArray),
-    CartItem = OneProductLike,
-}: Props) => {
+const ProductsInSaved = ({ CartItem = OneProductLike }: Props) => {
+    const productsArray = useAppSelector((state) => state.products)
+    const productsObject: ProductsObject = getProductsObject(productsArray)
+    const likeInCart = useAppSelector((state) => state.likeProducts)
+
     return (
         <>
             {Object.keys(likeInCart).map((productId) => (

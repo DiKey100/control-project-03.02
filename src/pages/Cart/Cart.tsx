@@ -2,13 +2,9 @@ import { Grid, Typography } from '@mui/material'
 import OneProductCartExtended from 'components/CartDetail/ProductsInCart/OneProductCartExtended'
 import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
 import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
-import { Link } from 'react-router-dom'
-import { useAppSelector } from 'redux/hooks'
 import './Cart.scss'
 
 const Cart = () => {
-    const productsInCart = useAppSelector((state) => state.productsInCart)
-
     return (
         <div>
             <Typography
@@ -29,13 +25,9 @@ const Cart = () => {
                 alignItems="center"
                 spacing={3}
             >
-                <ProductsInCart
-                    productsInCart={productsInCart}
-                    CartItem={OneProductCartExtended}
-                />
+                <ProductsInCart CartItem={OneProductCartExtended} />
             </Grid>
-            <TotalPrice productsInCart={productsInCart} />
-            <Link to="/order-confirmation">Подтверждение заказа</Link>
+            <TotalPrice />
         </div>
     )
 }

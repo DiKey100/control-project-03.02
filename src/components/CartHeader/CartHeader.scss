@@ -25,6 +25,7 @@
     padding: 30px;
     display: flex;
     flex-direction: column;
+    z-index: 2;
 }
 .close-sh-cart {
     position: relative;
@@ -43,7 +44,7 @@
 }
 .sh-cart-info {
     margin-top: -20px;
-    .total-price {
+    .header-total-price {
         margin-top: 10px;
     }
 }

@@ -1,4 +1,5 @@
 import { Button, Card, CardContent, Grid } from '@mui/material'
+import { Link } from 'react-router-dom'
 import { useAppDispatch } from 'redux/hooks'
 import { deleteLike } from 'redux/likeReducer'
 import { ProductProps } from 'utils/productsArray'
@@ -37,7 +38,12 @@ const OneProductLike = ({ product }: Props) => {
                                 variant="outlined"
                                 className="like-look-to-product"
                             >
-                                Просмотреть товар
+                                <Link
+                                    className="like-ltp-link"
+                                    to={`/products/${product.id}`}
+                                >
+                                    Просмотреть товар
+                                </Link>
                             </Button>
                             <Button
                                 variant="outlined"

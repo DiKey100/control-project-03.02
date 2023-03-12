@@ -1,9 +1,9 @@
 import { Grid } from '@mui/material'
 import ProductListItem from 'components/Products/ProductListItem'
-import productsArray from 'utils/productsArray'
 import Toolbar from '@mui/material/Toolbar'
 import { NavLink } from 'react-router-dom'
 import '../../css/FilterProduct.scss'
+import { useAppSelector } from 'redux/hooks'
 
 type ProductProps = {
     id: number
@@ -11,10 +11,12 @@ type ProductProps = {
     price: number
     color: string
     image: string
-    category?: string
+    category: string
 }
 
 const BootsProduct = () => {
+    const productsArray = useAppSelector((state) => state.products)
+
     return (
         <>
             <Toolbar>
