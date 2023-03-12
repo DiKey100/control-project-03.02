@@ -34,7 +34,10 @@ const ProductListItem = ({ id, title, price, image }: Props) => {
                             variant="outlined"
                             className="sm-look-to-product"
                         >
-                            <Link to={`/products/${id}`}>
+                            <Link
+                                className="sm-ltp-link"
+                                to={`/products/${id}`}
+                            >
                                 Просмотреть товар
                             </Link>
                         </Button>
