@@ -1,4 +1,4 @@
-import productsArray from 'utils/productsArray'
+import { useAppSelector } from 'redux/hooks'
 import DetailProductItem from './DetailProductItem'
 
 type ProductProps = {
@@ -7,10 +7,12 @@ type ProductProps = {
     price: number
     color: string
     image: string
-    category?: string
+    category: string
 }
 
 const DetailProductsList = () => {
+    const productsArray = useAppSelector((state) => state.products)
+
     return (
         <>
             {productsArray.map(
