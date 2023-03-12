@@ -29,7 +29,7 @@ const CartHeader = () => {
                         X
                     </div>
                     <div className="sh-cart-info">
-                        <ProductsInCart productsInCart={productsInCart} />
+                        <ProductsInCart />
                         <div className="header-total-price">
                             Общая сумма:{' '}
                             <span>
