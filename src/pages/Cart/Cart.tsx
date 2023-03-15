@@ -1,7 +1,8 @@
-import { Grid, Typography } from '@mui/material'
+import { Button, Grid, Typography } from '@mui/material'
 import OneProductCartExtended from 'components/CartDetail/ProductsInCart/OneProductCartExtended'
 import ProductsInCart from 'components/CartDetail/ProductsInCart/ProductsInCart'
 import TotalPrice from 'components/CartDetail/TotalPrice/TotalPrice'
+import { Link } from 'react-router-dom'
 import './Cart.scss'
 
 const Cart = () => {
@@ -28,6 +29,11 @@ const Cart = () => {
                 <ProductsInCart CartItem={OneProductCartExtended} />
             </Grid>
             <TotalPrice />
+            <Button className="bttn-conf-order" variant="outlined">
+                <Link to="/confirmation" className="confirmation-order">
+                    Подтвердите, пожалуйста, заказ
+                </Link>
+            </Button>
         </div>
     )
 }

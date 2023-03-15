@@ -12,3 +12,24 @@
         font-weight: 600;
     }
 }
+.bttn-conf-order {
+    margin-top: 40px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+    border: 1px solid black;
+    background-color: #FFCA14;
+    line-height: 35px;
+    border-radius: 20px;
+    .confirmation-order {
+        text-decoration: none;
+        color: black;
+    }
+    &:hover {
+        background-color: black;
+        border: 1px solid black;
+        .confirmation-order {
+            color: #FFCA14;
+        }
+    }
+}

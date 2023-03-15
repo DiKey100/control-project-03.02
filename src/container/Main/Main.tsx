@@ -7,6 +7,7 @@ import SportProduct from 'pages/SportProduct/SportProduct'
 import StreetProduct from 'pages/StreetProduct/StreetProduct'
 import BootsProduct from 'pages/BootsProduct/BootsProduct'
 import OneProduct from 'pages/OneProduct/OneProduct'
+import Confirmation from 'pages/Confirmation/Confirmation'
 
 const Main = () => {
     return (
@@ -26,6 +27,7 @@ const Main = () => {
                 <Route path="saved" element={<Saved />} />
                 <Route path="cart" element={<Cart />} />
                 <Route path="products/:id" element={<OneProduct />} />
+                <Route path="confirmation" element={<Confirmation />} />
             </Routes>
         </Container>
     )
