@@ -1,0 +1,13 @@
+.form-text, .form-name, .form-address, .form-email {
+    height: 30px;
+    line-height: 30px;
+    font-size: 25px;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.form-name, .form.email, .form-address {
+    width: 250px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
