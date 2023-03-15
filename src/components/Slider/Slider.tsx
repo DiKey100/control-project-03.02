@@ -1,11 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
-import 'swiper/css/navigation'
 import './Slider.scss'
 
 const Slider = () => {
     return (
-        <Swiper navigation={true} className="mySwiper">
+        <Swiper spaceBetween={50} slidesPerView={3} className="mySwiper">
             <SwiperSlide>
                 <img
                     src="https://raw.githubusercontent.com/DiKey100/control-project-03.02/master/public/images/slider/sl1.jpg"
